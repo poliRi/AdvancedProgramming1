@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/polinarabinovich/CLionProjects/project1/ILexer.h
+string
+-
+
+/Users/polinarabinovich/CLionProjects/project1/Lexer.h
+vector
+-
+iostream
+-
+string
+-
+fstream
+-
+ILexer.h
+/Users/polinarabinovich/CLionProjects/project1/ILexer.h
+Utils.h
+/Users/polinarabinovich/CLionProjects/project1/Utils.h
+
+/Users/polinarabinovich/CLionProjects/project1/Utils.h
+vector
+-
+iostream
+-
+string
+-
+fstream
+-
+
+/Users/polinarabinovich/CLionProjects/project1/main.cpp
+iostream
+-
+Lexer.h
+/Users/polinarabinovich/CLionProjects/project1/Lexer.h
+
