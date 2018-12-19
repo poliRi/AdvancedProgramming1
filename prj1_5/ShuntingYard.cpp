@@ -117,47 +117,44 @@ string ShuntingYard::convertToPostfix() {
 }
 
 
-Expression *fromPostFixToExpr(string postfix) {
+Expression *ShuntingYard::fromPostFixToExpr(string postfix) {
 
     string spl = postfix;
 
     vector<string> tokens = Utils::Split(spl, " ");
     double result;
-    Stack* stack = new Stack();
-    for(auto &token : tokens){
-        if (token == "+"){
-            Expression* right = new Number(stoi(stack->pop()));
-            Expression* left = new Number(stoi(stack->pop()));
+    Stack *stack = new Stack();
+    for (auto &token : tokens) {
+        if (token == "+") {
+            Expression *right = new Number(stoi(stack->pop()));
+            Expression *left = new Number(stoi(stack->pop()));
             result = (new Plus(left, right))->Calculate();
             Token t(to_string(result));
             stack->push(t);
-        }
-        else if (token == "-"){
-        Expression* right = new Number(stoi(stack->pop()));
-        Expression* left = new Number(stoi(stack->pop()));
-        result = (new Minus(left, right))->Calculate();
-        Token t(to_string(result));
-        stack->push(t);
-        }
-        else if (token == "*"){
-            Expression* right = new Number(stoi(stack->pop()));
-            Expression* left = new Number(stoi(stack->pop()));
+        } else if (token == "-") {
+            Expression *right = new Number(stoi(stack->pop()));
+            Expression *left = new Number(stoi(stack->pop()));
+            result = (new Minus(left, right))->Calculate();
+            Token t(to_string(result));
+            stack->push(t);
+        } else if (token == "*") {
+            Expression *right = new Number(stoi(stack->pop()));
+            Expression *left = new Number(stoi(stack->pop()));
             result = (new Mult(left, right))->Calculate();
             Token t(to_string(result));
             stack->push(t);
-        }
-        else if (token == "/"){
-            Expression* right = new Number(stoi(stack->pop()));
-            Expression* left = new Number(stoi(stack->pop()));
+        } else if (token == "/") {
+            Expression *right = new Number(stoi(stack->pop()));
+            Expression *left = new Number(stoi(stack->pop()));
             result = (new Div(left, right))->Calculate();
             Token t(to_string(result));
             stack->push(t);
-        }else {
+        } else {
             Token t(token);
             stack->push(t);
         }
     }
-    Number* res = new Number(result);
+    Number *res = new Number(result);
 
     return res;
 

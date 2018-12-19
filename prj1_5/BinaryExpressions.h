@@ -34,3 +34,11 @@ public:
 
     double Calculate();
 };
+
+class BoolenExpr : public BinaryExpression {
+
+public:
+    BoolenExpr(Expression *left, Expression *right);
+    double Calculate();
+};
+
