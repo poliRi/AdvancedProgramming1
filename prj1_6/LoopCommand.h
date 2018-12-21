@@ -22,6 +22,8 @@ public:
 
     void doCommand(vector<string> commands);
 
+    void RunAllNestedCommands(vector<Command*> commands, vector<string> allLoop);
+
 
 };
 

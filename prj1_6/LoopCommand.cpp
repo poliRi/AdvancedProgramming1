@@ -13,12 +13,25 @@ LoopCommand::LoopCommand(Expression *condition, vector<Command *> commands) {
 
 
 void LoopCommand::doCommand(vector<string> allLoop) {
-    Interpreter *inter;
+//    Interpreter *inter;
+//
+//    while (cond->calculate()) {
+//        for (auto line : allLoop) {
+//            vector<string> words = inter->Lexer(line);
+//            inter->Parser(words);
+//        }
+//    }
+
 
     while (cond->calculate()) {
-        for (auto line : allLoop) {
-            vector<string> words = inter->Lexer(line);
-            inter->Parser(words);
-        }
+        vector<string> copyAllLoop;
+        copyAllLoop = allLoop;
+        RunAllNestedCommands(allCommands, copyAllLoop);
+    }
+}
+
+void LoopCommand::RunAllNestedCommands(vector<Command *> commands, vector<string> copyAllLoop) {
+    for (auto &command : commands) {
+        command->doCommand(copyAllLoop);
     }
 }
