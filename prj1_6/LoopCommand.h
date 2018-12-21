@@ -5,14 +5,23 @@
 #ifndef PROJECT1_LOOPCOMMAND_H
 #define PROJECT1_LOOPCOMMAND_H
 
-#include "ConditionParser.h"
+#include "interface.h"
 
-class LoopCommand : public ConditionParser {
+
+
+class LoopCommand : public Command {
 
 private:
-    vector<Command*> commands;
+
+    vector<Command*> allCommands;
+    Expression* cond;
+    map<string, double>* symbolTable;
+
 public:
-    void doCommand(vector<string> args);
+    LoopCommand(Expression* condition, vector<Command*>);
+
+    void doCommand(vector<string> commands);
+
 
 };
 

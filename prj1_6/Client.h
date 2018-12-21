@@ -22,7 +22,7 @@ private:
 public:
 
     // Constructor for the client.
-    Client(char *serverIP, int serverPort);
+    Client(string serverIP, int serverPort);
 
 
     // Destructor for the client.

@@ -2,13 +2,13 @@
 
 class Interpreter {
 
-    private:
-        map<string, Command*> commands;
-        map<string, double> symTbl;
+private:
+    map<string, Command*> commands;
+    map<string, double> symbolTable;
 
-    public:
-        map<string, double> getSymbolTable();
-        Interpreter();
-        vector<string> Lexer(string line);
-        void Parser(vector<string> words);
+public:
+    Interpreter();
+    map<string, double> getSymbolTable();
+    vector<string> Lexer(string line);
+    void Parser(vector<string> words);
 };

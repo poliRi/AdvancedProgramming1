@@ -1,6 +1,5 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
-
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,7 +13,8 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
-
+#include <pthread.h>
+#include<list>
 
 using namespace std;
 
@@ -27,7 +27,7 @@ public:
 class Expression {
 
 public:
-    virtual double Calculate() = 0;
+    virtual double calculate() = 0;
 };
 
 class BinaryExpression : public Expression {

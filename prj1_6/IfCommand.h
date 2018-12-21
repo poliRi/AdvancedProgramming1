@@ -5,12 +5,22 @@
 #ifndef PROJECT1_IFCOMMAND_H
 #define PROJECT1_IFCOMMAND_H
 
-#include "ConditionParser.h"
+#include "interface.h"
 
-class IfCommand : public ConditionParser{
+class IfCommand : public Command {
+
+private:
+
+    vector<Command *> allCommands;
+    Expression *cond;
+    map<string, double> *symbolTable;
 
 public:
-    void doCommand(vector<string> args);
+    IfCommand(Expression *condition, vector<Command *>);
+
+    void doCommand(vector<string> commands);
+
+    void RunAllNestedCommands(vector<Command *> commands, vector<string> allLoop);
 
 };
 

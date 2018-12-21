@@ -3,13 +3,22 @@
 //
 
 #include "LoopCommand.h"
-#include "interface.h"
+#include "Interpreter.h"
 
-void LoopCommand::doCommand(vector<string> args){
-    bool condition;
-    while(condition == true){
-//        for (Command* c : commands){
-//            c->doCommand();
-//        }
+
+LoopCommand::LoopCommand(Expression *condition, vector<Command *> commands) {
+    cond = condition;
+    allCommands = commands;
+}
+
+
+void LoopCommand::doCommand(vector<string> allLoop) {
+    Interpreter *inter;
+
+    while (cond->calculate()) {
+        for (auto line : allLoop) {
+            vector<string> words = inter->Lexer(line);
+            inter->Parser(words);
+        }
     }
 }

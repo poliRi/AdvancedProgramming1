@@ -2,7 +2,7 @@
 
 class ConnectCommand : public Command {
 
-    public:
-        ConnectCommand();
-        void doCommand(vector<string> args);
+public:
+    ConnectCommand();
+    void doCommand(vector<string> args);
 };

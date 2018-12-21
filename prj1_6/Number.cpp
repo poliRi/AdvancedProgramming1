@@ -4,6 +4,6 @@ Number::Number(double value) {
     this->value = value;
 }
 
-double Number::Calculate() {
-   return value;
+double Number::calculate() {
+    return value;
 }

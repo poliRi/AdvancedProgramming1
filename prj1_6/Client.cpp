@@ -1,5 +1,9 @@
+#include <utility>
+
 #include <iostream>
 #include "client.h"
+#include "Client.h"
+
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
@@ -13,13 +17,6 @@
 
 using namespace std;
 
-Client::Client(char *serverIP, int serverPort){
-
-          serverIP_ = serverIP;
-          serverPort_ = serverPort;
-          clientSocket_ = 0;
-
-}
 
 
 Client::~Client() {
@@ -67,4 +64,10 @@ void Client::connectToServer() {
 
 int Client::getClientSocket_() const {
     return clientSocket_;
+}
+
+Client::Client(string serverIP, int serverPort) {
+    this->serverIP_=serverIP;
+    this->serverPort_=serverPort;
+
 }

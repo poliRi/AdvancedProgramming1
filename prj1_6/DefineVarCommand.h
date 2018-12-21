@@ -2,11 +2,11 @@
 
 class DefineVarCommand : public Command {
 
-    private:
-        map<string, double> symbolTable;
+private:
+    map<string, double> symbolTable;
 
-    public:
-        DefineVarCommand();
-        void doCommand(vector<string> args);
+public:
+    DefineVarCommand(map<string, double> symbolTable);
+    void doCommand(vector<string> args);
 
 };

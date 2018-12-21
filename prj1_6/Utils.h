@@ -2,7 +2,7 @@
 
 class Utils {
 
- public:
+public:
     Utils();
     static vector<string> Split(string str, string delimeter);
     static vector<string> Split(ifstream  &file, string delimeter);

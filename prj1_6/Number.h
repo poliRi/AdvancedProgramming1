@@ -2,10 +2,10 @@
 
 class Number : public Expression {
 
-    private:
-        double value;
+private:
+    double value;
 
-    public:
-        Number(double value);
-        double Calculate();
+public:
+    Number(double value);
+    double calculate();
 };

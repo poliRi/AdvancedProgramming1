@@ -12,15 +12,19 @@ void OpenServerCommand::doCommand(vector<string> args) {
         if ((port < 0) || (rate < 0)) {
             throw invalid_argument("invalid argument");
         }
-        void *(*doServer)(void*);
-
-//        pthread_create(&thread, nullptr, doServer, nullptr);
-        //send two parameters to Data Reader Server
-//        doServer(port, rate);
+        //creating pthread
+        void *(*doServer)(void *);
+        MyParams *params = new MyParams();
+        params->port = port;
+        params->rate = rate;
+        pthread_t serv;
+        pthread_create(&serv, nullptr, doServer, &params);
     }
 }
 
-int OpenServerCommand::doServer(int port, int rate) {
+void *OpenServerCommand::doServer(void *arg) {
+    //casting
+    MyParams* params = (MyParams*) arg;
     int sockfd, newsockfd, clilen;
     char buffer[256];
     struct sockaddr_in serv_addr, cli_addr;
@@ -40,7 +44,7 @@ int OpenServerCommand::doServer(int port, int rate) {
 
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = INADDR_ANY;
-    serv_addr.sin_port = htons(port);
+    serv_addr.sin_port = htons(params->port);
 
     /* Now bind the host address using bind() call.*/
 //    if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) == -1) {
