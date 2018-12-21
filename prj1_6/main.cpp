@@ -1,35 +1,47 @@
 #include "interface.h"
+#include "Interpreter.h"
+#include "Utils.h"
+#include "FormExpressionCommand.h"
 
-#include "ShuntingYard.h"
+int main(int argc, char *argv[]) {
+    /*Interpreter* interpreter = new Interpreter();
+    if (argc == 2) {
+        string fileName = argv[1];
+        vector<string> words;
+        ifstream file;
+        file.open(fileName);
+        if (file.is_open()) {
+            auto lines = Utils::Split(file, "\n");
+            for (auto& line : lines) {
+                vector<string> words = interpreter->Lexer(line);
+                interpreter->Parser(words);
+            }
+            file.close();
+        } else {
+            cerr << "error opening file" << endl;
+        }
+    } else if (argc == 1) {
+        string line;
+        while (line != "") {
+            getline (cin,line);
+            vector<string> words = interpreter->Lexer(line);
+            interpreter->Parser(words);
+        }
+    } else {
+        cout << "invalid number of arguments" << endl;
+    }*/
 
 
+    /*Interpreter* interpreter = new Interpreter();
+    string fileName = "/Users/polinarabinovich/CLionProjects/project1/project1.txt";
+    vector<string> words = interpreter->Lexer(fileName);
+    interpreter->Parser(words);*/
 
-int main() {
-//    Interpreter interpreter;
-//    string path = "/Users/polinarabinovich/CLionProjects/project1/project1.txt";
-//    ifstream file;
-//    file.open(path);
-//    //split string to lines in file by "\n"
-//    auto lines = Utils::Split(file, "\n");
-//    //read each line and send to interpretation
-//    for (auto line : lines) {
-//        vector<string> words = interpreter.Lexer(line);
-//        interpreter.Parser(words);
-//    }
-//    file.close();
-
-    ShuntingYard *sh = new ShuntingYard("(42/2)*(8+9)");
-//sh->setExpression("2 + 9 - (4 * 2)");
-    sh->formatExpression();
-    string s = sh->convertToPostfix();
-
-    Expression* result2 = sh->fromPostFixToExpr(s);
-    result2->Calculate();
-    cout << result2->Calculate() << endl;
-
-    Expression *e = new Plus(new Number(3), new Mult(new Div(new Number(4), new Number(2)), new Number(5)));
-//    cout << e->Calculate() << endl;
+    vector<string> v = {};
+    map<string, double> m = {{"heading", 15} , {"throttle", 7.8}};
+    Command* c = new FormExpressionCommand(m);
+    v.push_back("(- heading / 70)*(throttle/12)");
+    c->doCommand(v);
 
     return 0;
-
 }

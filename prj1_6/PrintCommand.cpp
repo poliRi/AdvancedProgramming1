@@ -1,9 +1,21 @@
 #include "PrintCommand.h"
 
-PrintCommand::PrintCommand() {}
-
-void PrintCommand::doCommand(vector<string> args) {
-    cout << args[0] << endl;
+PrintCommand::PrintCommand(map<string, double> symbolTable) {
+    this->symbolTable = symbolTable;
 }
 
-
+void PrintCommand::doCommand(vector<string> args) {
+    if (symbolTable.count(args[0]) > 0) {
+        cout << symbolTable.find(args[0])->second << endl;
+    } else {
+        for (auto& word : args) {
+            if (word[0] == '\"') {
+                word.erase(0);
+            } else if (word[word.size() - 1] == '\"') {
+                word.erase(word.size() - 1);
+            }
+            cout << word << " ";
+        }
+        cout << endl;
+    }
+}

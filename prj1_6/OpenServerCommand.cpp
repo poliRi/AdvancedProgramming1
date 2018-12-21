@@ -1,9 +1,6 @@
 #include "OpenServerCommand.h"
 
-
-OpenServerCommand::OpenServerCommand() {
-
-}
+OpenServerCommand::OpenServerCommand() {}
 
 void OpenServerCommand::doCommand(vector<string> args) {
     // if args.len != 2 throw exeception
@@ -22,8 +19,6 @@ void OpenServerCommand::doCommand(vector<string> args) {
 //        doServer(port, rate);
     }
 }
-
-
 
 int OpenServerCommand::doServer(int port, int rate) {
     int sockfd, newsockfd, clilen;
@@ -87,12 +82,3 @@ int OpenServerCommand::doServer(int port, int rate) {
         exit(1);
     }
 }
-
-
-
-
-
-
-
-
-
