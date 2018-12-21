@@ -5,6 +5,9 @@ PrintCommand::PrintCommand(map<string, double> symbolTable) {
 }
 
 void PrintCommand::doCommand(vector<string> args) {
+    if (args.size() == 0) {
+        throw logic_error("no argument to print command");
+    }
     if (symbolTable.count(args[0]) > 0) {
         cout << symbolTable.find(args[0])->second << endl;
     } else {

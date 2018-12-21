@@ -22,7 +22,7 @@ void FormExpressionCommand::doCommand(vector<string> args) {
         cout << infix << endl;
         string postfix = convertToPostfix();
         cout << postfix << endl;
-        Expression* e = fromPostfixToExpr(postfix);
+        e = fromPostfixToExpr(postfix);
         cout << e->calculate() << endl;
     }
 }
@@ -42,7 +42,7 @@ void FormExpressionCommand::evaluateVars() {
 bool FormExpressionCommand::isSignelNumber() {
     for (int i = 0; i < infix.size(); i++) {
         if ((infix[i] == '+')||(infix[i] == '-')||(infix[i] == '*')||(infix[i] == '/')||
-            (infix[i] == '(')||(infix[i] == ')')) {
+        (infix[i] == '(')||(infix[i] == ')')) {
             return false;
         }
     }
@@ -59,7 +59,7 @@ int FormExpressionCommand::precedence(string oper) {
 
 bool FormExpressionCommand::isDigit(char c) {
     return ((c == '0')||(c == '1')||(c == '2')||(c == '3')||(c == '4')||(c == '5')||(c == '6')||
-            (c == '7')||(c == '8')||(c == '9'));
+    (c == '7')||(c == '8')||(c == '9'));
 }
 
 bool FormExpressionCommand::isNumber(string token) {
@@ -94,7 +94,7 @@ void FormExpressionCommand::toTokens() {
     string result = "";
     for (int i = 0; i < infix.size(); i++) {
         if ((infix[i] == '+')||(infix[i] == '-')||(infix[i] == '*')||(infix[i] == '/')||
-            (infix[i] == '(')||(infix[i] == ')')) {
+        (infix[i] == '(')||(infix[i] == ')')) {
             result += infix[i];
             result += " ";
         } else if (infix[i] == ' ') {
@@ -106,8 +106,8 @@ void FormExpressionCommand::toTokens() {
                 if ((isDigit(infix[i + 1]))||(infix[i + 1] == '.')) {
                     result += infix[i];
                 } else {
-                    result += infix[i];
-                    result += " ";
+                   result += infix[i];
+                   result += " ";
                 }
             }
         } else if (infix[i] == '.') {
@@ -147,11 +147,11 @@ void FormExpressionCommand::rewriteNegativeExp() {
     if (tokens.size() >= 5) {
         for (int i = 0; i < tokens.size() - 4; i++) {
             if ((isNumber(tokens[i]))&&(isOperator(tokens[i + 1]))&&
-                (isNumber(tokens[i + 2]))&&(isOperator(tokens[i + 3]))&&(isNumber(tokens[i + 4]))) {
+            (isNumber(tokens[i + 2]))&&(isOperator(tokens[i + 3]))&&(isNumber(tokens[i + 4]))) {
                 if (((tokens[i + 1] == "-")&&(tokens[i + 3] == "+"))||
-                    ((tokens[i + 1] == "-")&&(tokens[i + 3] == "-"))||
-                    ((tokens[i + 1] == "/")&&(tokens[i + 3] == "/"))||
-                    ((tokens[i + 1] == "/")&&(tokens[i + 3] == "*"))) {
+                ((tokens[i + 1] == "-")&&(tokens[i + 3] == "-"))||
+                ((tokens[i + 1] == "/")&&(tokens[i + 3] == "/"))||
+                ((tokens[i + 1] == "/")&&(tokens[i + 3] == "*"))) {
                     tokens.insert(tokens.begin() + i + 3, ")");
                     tokens.insert(tokens.begin() + i, "(");
                 }
@@ -255,5 +255,9 @@ Expression* FormExpressionCommand::fromPostfixToExpr(string postfix) {
     }
     Number* n = new Number(result);
     return n;
+}
+
+string FormExpressionCommand::getResultStr() {
+    return to_string(e->calculate());
 }
 

@@ -2,9 +2,9 @@
 
 class SleepCommand : public Command {
 
-public:
-    SleepCommand();
-    void doCommand(vector<string> args);
+    public:
+        SleepCommand();
+        void doCommand(vector<string> args);
 
 };
 

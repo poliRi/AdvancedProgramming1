@@ -2,35 +2,35 @@
 
 class Plus : public BinaryExpression {
 
-public:
-    Plus(Expression *left, Expression *right);
-    double calculate();
+    public:
+        Plus(Expression *left, Expression *right);
+        double calculate();
 };
 
 class Minus : public BinaryExpression {
 
-public:
-    Minus(Expression *left, Expression *right);
-    double calculate();
+    public:
+        Minus(Expression *left, Expression *right);
+        double calculate();
 };
 
 class Mult : public BinaryExpression {
 
-public:
-    Mult(Expression *left, Expression *right);
-    double calculate();
+    public:
+        Mult(Expression *left, Expression *right);
+        double calculate();
 };
 
 class Div : public BinaryExpression {
 
-public:
-    Div(Expression *left, Expression *right);
-    double calculate();
+    public:
+        Div(Expression *left, Expression *right);
+        double calculate();
 };
 
 class BoolenExpr : public BinaryExpression {
 
-public:
-    BoolenExpr(Expression *left, Expression *right);
-    double calculate();
+    public:
+        BoolenExpr(Expression *left, Expression *right);
+        double calculate();
 };

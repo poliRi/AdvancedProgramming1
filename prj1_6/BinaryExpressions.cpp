@@ -6,7 +6,7 @@ Plus::Plus(Expression* left, Expression* right) {
 }
 
 double Plus::calculate() {
-    return left->calculate() + right->calculate();
+   return left->calculate() + right->calculate();
 }
 
 Minus::Minus(Expression* left, Expression* right) {
@@ -15,7 +15,7 @@ Minus::Minus(Expression* left, Expression* right) {
 }
 
 double Minus::calculate() {
-    return left->calculate() - right->calculate();
+   return left->calculate() - right->calculate();
 }
 
 Mult::Mult(Expression* left, Expression* right) {
@@ -24,7 +24,7 @@ Mult::Mult(Expression* left, Expression* right) {
 }
 
 double Mult::calculate() {
-    return left->calculate() * right->calculate();
+   return left->calculate() * right->calculate();
 }
 
 Div::Div(Expression* left, Expression* right) {
@@ -33,5 +33,5 @@ Div::Div(Expression* left, Expression* right) {
 }
 
 double Div::calculate() {
-    return left->calculate() / right->calculate();
+   return left->calculate() / right->calculate();
 }
