@@ -2,14 +2,14 @@
 // Created by Polina Rabinovich on 18/12/2018.
 //
 
-#ifndef PROJECT1_LOOPCOMMAND_H
-#define PROJECT1_LOOPCOMMAND_H
+#ifndef PROJECT1_WHILECOMMAND_H
+#define PROJECT1_WHILECOMMAND_H
 
 #include "interface.h"
 
 
 
-class LoopCommand : public Command {
+class WhileCommand : public Command {
 
 private:
 
@@ -18,7 +18,7 @@ private:
     map<string, double>* symbolTable;
 
 public:
-    LoopCommand(Expression* condition, vector<Command*>);
+    WhileCommand(Expression* condition, vector<Command*>);
 
     void doCommand(vector<string> commands);
 
@@ -28,4 +28,4 @@ public:
 };
 
 
-#endif //PROJECT1_LOOPCOMMAND_H
+#endif //PROJECT1_WHILECOMMAND_H

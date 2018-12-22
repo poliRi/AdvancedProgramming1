@@ -24,7 +24,7 @@ void OpenServerCommand::doCommand(vector<string> args) {
 
 void *OpenServerCommand::doServer(void *arg) {
     //casting
-    MyParams* params = (MyParams*) arg;
+    MyParams *params = (MyParams *) arg;
     int sockfd, newsockfd, clilen;
     char buffer[256];
     struct sockaddr_in serv_addr, cli_addr;
@@ -67,22 +67,26 @@ void *OpenServerCommand::doServer(void *arg) {
         exit(1);
     }
 
-    /* If connection is established then start communicating */
-    bzero(buffer, 256);
-    n = read(newsockfd, buffer, 255);
+    //when we see word "quit"
+    while (!strcmp(buffer,"quit")){
+        /* If connection is established then start communicating */
+        bzero(buffer, 256);
+        n = read(newsockfd, buffer, 255);
 
-    if (n < 0) {
-        perror("ERROR reading from socket");
-        exit(1);
-    }
+        if (n < 0) {
+            perror("ERROR reading from socket");
+            exit(1);
+        }
 
-    printf("Here is the message: %s\n", buffer);
+        printf("Here is the message: %s\n", buffer);
 
-    /* Write a response to the client */
-    n = write(newsockfd, "I got your message", 18);
+        /* Write a response to the client */
+        n = write(newsockfd, "I got your message", 18);
 
-    if (n < 0) {
-        perror("ERROR writing to socket");
-        exit(1);
+        if (n < 0) {
+            perror("ERROR writing to socket");
+            exit(1);
+        }
+
     }
 }

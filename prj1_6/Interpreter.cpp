@@ -69,6 +69,7 @@ void Interpreter::Parser(vector<string> words) {
         }
     } else if (words[0] == "while") {
 
+
     } else if (words[0] == "if") {
 
     } else if (symbolTable.count(words[0]) > 0) {

@@ -2,17 +2,17 @@
 // Created by Polina Rabinovich on 18/12/2018.
 //
 
-#include "LoopCommand.h"
+#include "WhileCommand.h"
 #include "Interpreter.h"
 
 
-LoopCommand::LoopCommand(Expression *condition, vector<Command *> commands) {
+WhileCommand::WhileCommand(Expression *condition, vector<Command *> commands) {
     cond = condition;
     allCommands = commands;
 }
 
 
-void LoopCommand::doCommand(vector<string> allLoop) {
+void WhileCommand::doCommand(vector<string> allLoop) {
 //    Interpreter *inter;
 //
 //    while (cond->calculate()) {
@@ -30,7 +30,7 @@ void LoopCommand::doCommand(vector<string> allLoop) {
     }
 }
 
-void LoopCommand::RunAllNestedCommands(vector<Command *> commands, vector<string> copyAllLoop) {
+void WhileCommand::RunAllNestedCommands(vector<Command *> commands, vector<string> copyAllLoop) {
     for (auto &command : commands) {
         command->doCommand(copyAllLoop);
     }
