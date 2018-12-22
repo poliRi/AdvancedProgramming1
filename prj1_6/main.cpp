@@ -4,7 +4,6 @@
 #include "FormExpressionCommand.h"
 
 int main(int argc, char *argv[]) {
-    /*Interpreter* interpreter = new Interpreter();
     if (argc == 2) {
         string fileName = argv[1];
         vector<string> words;
@@ -12,8 +11,10 @@ int main(int argc, char *argv[]) {
         file.open(fileName);
         if (file.is_open()) {
             auto lines = Utils::Split(file, "\n");
-            for (auto& line : lines) {
-                vector<string> words = interpreter->Lexer(line);
+            Interpreter* interpreter = new Interpreter(lines);
+            int currentLine;
+            for (currentLine = 0; currentLine < lines.size() - 1; currentLine++) {
+                vector<string> words = interpreter->Lexer(currentLine);
                 interpreter->Parser(words);
             }
             file.close();
@@ -21,15 +22,15 @@ int main(int argc, char *argv[]) {
             cerr << "error opening file" << endl;
         }
     } else if (argc == 1) {
-        string line;
+        /*string line;
         while (line != "") {
             getline (cin,line);
             vector<string> words = interpreter->Lexer(line);
             interpreter->Parser(words);
         }
-    } else {
+    }*/ else {
         cout << "invalid number of arguments" << endl;
-    }*/
+    }
 
 
     /*Interpreter* interpreter = new Interpreter();

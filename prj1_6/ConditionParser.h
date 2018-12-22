@@ -1,15 +1,16 @@
-//
-// Created by Polina Rabinovich on 18/12/2018.
-//
-
-#ifndef PROJECT1_CONDITIONPARSER_H
-#define PROJECT1_CONDITIONPARSER_H
-
 #include "interface.h"
+#include "FormExpressionCommand.h"
 
-class ConditionParser : public Command {
+class ConditionParser {
 
+    private:
+        map<string, double> symbolTable;
+        string leftExp;
+        string oper;
+        string rightExp;
+        FormExpressionCommand* evaluate;
+
+    public:
+        ConditionParser(vector<string> tokens, map<string, double> symbolTable);
+        bool isTrue();
 };
-
-
-#endif //PROJECT1_CONDITIONPARSER_H

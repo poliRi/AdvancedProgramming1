@@ -1,37 +1,23 @@
-//
-// Created by Polina Rabinovich on 18/12/2018.
-//
-
 #include "WhileCommand.h"
-#include "Interpreter.h"
 
-
-WhileCommand::WhileCommand(Expression *condition, vector<Command *> commands) {
-    cond = condition;
-    allCommands = commands;
+WhileCommand::WhileCommand(map<string, double> symbolTable) {
+    this->symbolTable = symbolTable;
 }
 
+void WhileCommand::setCondition(ConditionParser* condition) {
+    this->condition = condition;
+}
 
-void WhileCommand::doCommand(vector<string> allLoop) {
-//    Interpreter *inter;
-//
-//    while (cond->calculate()) {
-//        for (auto line : allLoop) {
-//            vector<string> words = inter->Lexer(line);
-//            inter->Parser(words);
-//        }
-//    }
-
-
-    while (cond->calculate()) {
-        vector<string> copyAllLoop;
-        copyAllLoop = allLoop;
-        RunAllNestedCommands(allCommands, copyAllLoop);
+void WhileCommand::doCommand(vector<string> args) {
+    Interpreter* interpreter = new Interpreter(args);
+    interpreter->setSymbolTable(symbolTable);
+    int currentLine;
+    while (condition->isTrue()) {
+        for (currentLine = 0; currentLine < args.size() - 1; currentLine++) {
+            vector<string> words = interpreter->Lexer(currentLine);
+            interpreter->Parser(words);
+        }
     }
 }
 
-void WhileCommand::RunAllNestedCommands(vector<Command *> commands, vector<string> copyAllLoop) {
-    for (auto &command : commands) {
-        command->doCommand(copyAllLoop);
-    }
-}
+

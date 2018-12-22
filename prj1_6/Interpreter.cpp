@@ -7,8 +7,12 @@
 #include "SleepCommand.h"
 #include "FormExpressionCommand.h"
 #include "AssignmentCommand.h"
+#include "ConditionParser.h"
+#include "WhileCommand.h"
+#include "IfCommand.h"
 
-Interpreter::Interpreter() {
+Interpreter::Interpreter(vector<string> lines) {
+    this->lines = lines;
     this->symbolTable = {};
     this->commands = {};
     commands.insert(pair<string,Command*>("openDataServer",(new OpenServerCommand())));
@@ -19,14 +23,13 @@ Interpreter::Interpreter() {
     commands.insert(pair<string,Command*>("assignment",(new AssignmentCommand(symbolTable))));
     //commands.insert(pair<string,Command*>("bind",(new BindCommand())));
     commands.insert(pair<string,Command*>("formExpression",(new FormExpressionCommand(symbolTable))));
-
-    // insert loop commands
-
-
+    commands.insert(pair<string,Command*>("while",(new WhileCommand(symbolTable))));
+    commands.insert(pair<string,Command*>("if",(new IfCommand(symbolTable))));
 }
 
-vector<string> Interpreter::Lexer(string line) {
-    vector<string> words = Utils::Split(line, " ");
+vector<string> Interpreter::Lexer(int &currentLine) {
+    this->currentLine = currentLine;
+    vector<string> words = Utils::Split(lines[currentLine], " ");
     /*print vector
     for (const auto& res : words) {
            cout << res << endl;
@@ -67,11 +70,29 @@ void Interpreter::Parser(vector<string> words) {
                 ass->doCommand(params);
             }
         }
-    } else if (words[0] == "while") {
-
-
-    } else if (words[0] == "if") {
-
+    } else if ((words[0] == "while")||(words[0] == "if")) {
+         vector<string> conditionTokens = {};
+         for (int i = 1; ((i < words.size() - 1)&&(words[i] != "{")); i++) {
+            conditionTokens.push_back(words[i]);
+         }
+         currentLine++;
+         if (words.back() != "{") {
+            currentLine++;
+         }
+         ConditionParser* condition = new ConditionParser(conditionTokens, symbolTable);
+         while (lines[currentLine].front() != '}') {
+            params.push_back(lines[currentLine]);
+            currentLine++;
+         }
+         if (words[0] == "while") {
+             WhileCommand* whileCmd = (WhileCommand*)commands.find("while")->second;
+             whileCmd->setCondition(condition);
+             whileCmd->doCommand(params);
+         } else if (words[0] == "if") {
+            IfCommand* ifCmd = (IfCommand*)commands.find("if")->second;
+            ifCmd->setCondition(condition);
+            ifCmd->doCommand(params);
+         }
     } else if (symbolTable.count(words[0]) > 0) {
         if (words[2] == "bind") {
                 Command* bnd = commands.find("bind")->second;
@@ -97,6 +118,6 @@ void Interpreter::Parser(vector<string> words) {
     }
 }
 
-map<string, double> Interpreter::getSymbolTable() {
-    return symbolTable;
+map<string, double> Interpreter::setSymbolTable(map<string, double> symbolTable) {
+    this->symbolTable = symbolTable;
 }
