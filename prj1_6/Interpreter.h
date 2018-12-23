@@ -8,8 +8,8 @@ class Interpreter {
         vector<string> lines;
         int currentLine;
         map<string, Command*> commands;
-        map<string, double> symbolTable;
-        map<string, string> pathTable;
+        map<string, double> *symbolTable;
+        map<string, string> *pathTable;
 
     public:
         Interpreter(vector<string> lines, map<string, double> &symbolTable, map<string, string> &pathTable);

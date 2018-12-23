@@ -4,7 +4,7 @@
 #include "FormExpressionCommand.h"
 
 int main(int argc, char *argv[]) {
-    /*if (argc == 2) {
+    if (argc == 2) {
         string fileName = argv[1];
         vector<string> words;
         ifstream file;
@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
             map<string, string> pathTable = {};
             Interpreter* interpreter = new Interpreter(lines, symbolTable, pathTable);
             int currentLine;
-            for (currentLine = 0; currentLine < lines.size() - 1; currentLine++) {
+            for (currentLine = 0; currentLine < lines.size(); currentLine++) {
                 vector<string> words = interpreter->Lexer(currentLine);
                 interpreter->Parser(words);
             }
@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
         } else {
             cerr << "error opening file" << endl;
         }
-    } else if (argc == 1) {
+    } /*else if (argc == 1) {
         string line;
         while (line != "") {
             getline (cin,line);
@@ -34,11 +34,11 @@ int main(int argc, char *argv[]) {
         cout << "invalid number of arguments" << endl;
     }*/
 
-    vector<string> v = {};
+    /*vector<string> v = {};
     map<string, double> m = {{"heading", 15} , {"throttle", 7.8}};
     Command* c = new FormExpressionCommand(m);
     v.push_back("(- heading / 70)*(throttle/12)");
-    c->doCommand(v);
+    c->doCommand(v);*/
 
     return 0;
 }

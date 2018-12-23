@@ -5,12 +5,12 @@
 class AssignmentCommand : public Command {
 
     private:
-        map<string, double> symbolTable;
-        map<string, string> pathTable;
+        map<string, double> *symbolTable;
+        map<string, string> *pathTable;
 
     public:
         AssignmentCommand(map<string, double> &symbolTable, map<string, string> &pathTable);
-        bool isDigit(char c);
+        bool isNumber(string s);
         void doCommand(vector<string> args);
 };
 

@@ -5,7 +5,7 @@
 class BindCommand : public Command {
 
     private:
-        map<string, string> pathTable;
+        map<string, string> *pathTable;
 
     public:
         BindCommand(map<string, string> &pathTable);

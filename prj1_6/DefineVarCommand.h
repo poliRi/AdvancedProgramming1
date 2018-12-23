@@ -5,8 +5,8 @@
 class DefineVarCommand : public Command {
 
     private:
-        map<string, double> symbolTable;
-        map<string, string> pathTable;
+        map<string, double> *symbolTable;
+        map<string, string> *pathTable;
 
 
     public:

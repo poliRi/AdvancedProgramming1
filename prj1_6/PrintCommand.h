@@ -5,7 +5,7 @@
 class PrintCommand : public Command {
 
     private:
-        map<string, double> symbolTable;
+        map<string, double> *symbolTable;
 
     public:
         PrintCommand(map<string, double> &symbolTable);

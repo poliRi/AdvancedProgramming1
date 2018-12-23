@@ -4,7 +4,7 @@
 #include "BinaryExpressions.h"
 
 FormExpressionCommand::FormExpressionCommand(map<string, double> &symbolTable) {
-    this->symbolTable = symbolTable;
+    this->symbolTable = &symbolTable;
 }
 
 void FormExpressionCommand::doCommand(vector<string> args) {
@@ -14,22 +14,24 @@ void FormExpressionCommand::doCommand(vector<string> args) {
     this->infix = args[0];
     evaluateVars();
     if (isSignelNumber()) {
-        Expression* e = new Number(stod(infix));
-        cout << e->calculate() << endl;
+        e = new Number(stod(infix));
+        //cout << e->calculate() << endl;
+        result = to_string(e->calculate());
     } else {
         toTokens();
         rewriteNegativeExp();
-        cout << infix << endl;
+        //cout << infix << endl;
         string postfix = convertToPostfix();
-        cout << postfix << endl;
+        //cout << postfix << endl;
         e = fromPostfixToExpr(postfix);
-        cout << e->calculate() << endl;
+        //cout << e->calculate() << endl;
+        result = to_string(e->calculate());
     }
 }
 
 void FormExpressionCommand::evaluateVars() {
     map<string,double>::iterator iter;
-    for (iter = symbolTable.begin(); iter != symbolTable.end(); ++iter) {
+    for (iter = symbolTable->begin(); iter != symbolTable->end(); ++iter) {
         string var = iter->first;
         string value = to_string(iter->second);
         while (infix.find(var) != string::npos) {
@@ -117,7 +119,7 @@ void FormExpressionCommand::toTokens() {
         }
     }
     if (result[result.size() - 1] == ' ') {
-        result.erase(result.size() - 1);
+        result.erase(result.begin() + (result.size() - 1));
     }
     infix = result;
 }
@@ -163,7 +165,7 @@ void FormExpressionCommand::rewriteNegativeExp() {
         result += tokens[i];
         result += " ";
     }
-    result.erase(result.size() - 1);
+    result.erase(result.begin() + (result.size() - 1));
     infix = result;
 }
 
@@ -211,7 +213,7 @@ string FormExpressionCommand::convertToPostfix() {
         result += element;
         result += " ";
     }
-    result.erase(result.size() - 1);
+    result.erase(result.begin() + (result.size() - 1));
     return result;
 }
 
@@ -258,6 +260,6 @@ Expression* FormExpressionCommand::fromPostfixToExpr(string postfix) {
 }
 
 string FormExpressionCommand::getResultStr() {
-    return to_string(e->calculate());
+    return result;
 }
 

@@ -15,8 +15,8 @@
 
 Interpreter::Interpreter(vector<string> lines, map<string, double> &symbolTable, map<string, string> &pathTable) {
     this->lines = lines;
-    this->symbolTable = symbolTable;
-    this->pathTable = pathTable;
+    this->symbolTable = &symbolTable;
+    this->pathTable = &pathTable;
     this->commands = {};
     commands.insert(pair<string,Command*>("openDataServer",(new OpenServerCommand())));
     commands.insert(pair<string,Command*>("connect",(new ConnectCommand())));
@@ -33,7 +33,7 @@ Interpreter::Interpreter(vector<string> lines, map<string, double> &symbolTable,
 vector<string> Interpreter::Lexer(int &currentLine) {
     this->currentLine = currentLine;
     vector<string> words = Utils::Split(lines[currentLine], " ");
-    /*print vector
+    /*//print vector
     for (const auto& res : words) {
            cout << res << endl;
     }*/
@@ -75,15 +75,18 @@ void Interpreter::Parser(vector<string> words) {
         }
     } else if ((words[0] == "while")||(words[0] == "if")) {
          vector<string> conditionTokens = {};
-         for (int i = 1; ((i < words.size() - 1)&&(words[i] != "{")); i++) {
+         for (int i = 1; ((i < words.size())&&(words[i] != "{")); i++) {
             conditionTokens.push_back(words[i]);
          }
          currentLine++;
          if (words.back() != "{") {
             currentLine++;
          }
-         ConditionParser* condition = new ConditionParser(conditionTokens, symbolTable);
+         ConditionParser* condition = new ConditionParser(conditionTokens, *symbolTable);
          while (lines[currentLine].front() != '}') {
+            if (lines[currentLine].front() == '\t') {
+                lines[currentLine].erase(lines[currentLine].begin());
+            }
             params.push_back(lines[currentLine]);
             currentLine++;
          }
@@ -96,7 +99,7 @@ void Interpreter::Parser(vector<string> words) {
             ifCmd->setCondition(condition);
             ifCmd->doCommand(params);
          }
-    } else if (symbolTable.count(words[0]) > 0) {
+    } else if (symbolTable->count(words[0]) > 0) {
         if (words[2] == "bind") {
                 Command* bnd = commands.find("bind")->second;
                 params.push_back(words[0]);
@@ -116,7 +119,8 @@ void Interpreter::Parser(vector<string> words) {
                 params.push_back(evaluate->getResultStr());
                 ass->doCommand(params);
             }
+    } else if ((words[0].size() == 0)||(words[0] == "}")) {
     } else {
-        throw logic_error("unrecognized operation");
+         throw logic_error("unrecognized operation");
     }
 }

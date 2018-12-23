@@ -1,0 +1,19 @@
+var breaks = 77
+print breaks
+breaks = 104.88
+print breaks
+var throttle = 0
+throttle = throttle+12
+print throttle
+while throttle < 24 {
+	throttle = throttle + 1
+	print throttle
+}
+
+
+var h0 = throttle*2/4
+if (h0 > 12.5) {
+	print "falied"
+}
+print h0
+print "done"

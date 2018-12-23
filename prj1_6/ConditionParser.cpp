@@ -1,7 +1,7 @@
 #include "ConditionParser.h"
 
 ConditionParser::ConditionParser(vector<string> tokens, map<string, double> &symbolTable) {
-    this->symbolTable = symbolTable;
+    this->symbolTable = &symbolTable;
     this->evaluate = new FormExpressionCommand(symbolTable);
     leftExp = "";
     rightExp = "";
@@ -14,7 +14,7 @@ ConditionParser::ConditionParser(vector<string> tokens, map<string, double> &sym
         }
     }
     int i;
-    for (i = 0; i < tokens.size() - 1; i++) {
+    for (i = 0; i < tokens.size(); i++) {
         if ((tokens[i] == "<")||(tokens[i] == ">")||(tokens[i] == "<=")||
         (tokens[i] == ">=")||(tokens[i] == "==")||(tokens[i] == "!=")) {
             oper = tokens[i];
@@ -23,7 +23,7 @@ ConditionParser::ConditionParser(vector<string> tokens, map<string, double> &sym
         }
         leftExp += tokens[i];
     }
-    while (i < tokens.size() - 1) {
+    while (i < tokens.size()) {
         rightExp += tokens[i];
         i++;
     }

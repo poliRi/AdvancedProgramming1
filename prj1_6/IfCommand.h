@@ -8,8 +8,8 @@ class IfCommand : public Command {
 
     private:
         ConditionParser* condition;
-        map<string, double> symbolTable;
-        map<string, string> pathTable;
+        map<string, double> *symbolTable;
+        map<string, string> *pathTable;
 
     public:
         IfCommand(map<string, double> &symbolTable, map<string, string> &pathTable);

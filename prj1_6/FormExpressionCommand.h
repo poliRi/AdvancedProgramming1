@@ -5,9 +5,10 @@
 class FormExpressionCommand : public Command {
 
     private:
-        map<string, double> symbolTable;
+        map<string, double> *symbolTable;
         string infix;
         Expression* e;
+        string result;
 
     public:
         FormExpressionCommand(map<string, double> &symbolTable);

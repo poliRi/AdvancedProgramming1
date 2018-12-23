@@ -8,8 +8,8 @@ class WhileCommand : public Command {
 
     private:
         ConditionParser* condition;
-        map<string, double> symbolTable;
-        map<string, string> pathTable;
+        map<string, double> *symbolTable;
+        map<string, string> *pathTable;
 
     public:
         WhileCommand(map<string, double> &symbolTable, map<string, string> &pathTable);

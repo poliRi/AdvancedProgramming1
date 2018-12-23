@@ -6,7 +6,7 @@
 class ConditionParser {
 
     private:
-        map<string, double> symbolTable;
+        map<string, double> *symbolTable;
         string leftExp;
         string oper;
         string rightExp;
