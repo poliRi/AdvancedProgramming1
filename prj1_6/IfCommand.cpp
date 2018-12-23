@@ -11,10 +11,9 @@ void IfCommand::setCondition(ConditionParser* condition) {
 
 void IfCommand::doCommand(vector<string> args) {
     Interpreter* interpreter = new Interpreter(args, *symbolTable, *pathTable);
-    int currentLine;
     if (condition->isTrue()) {
-        for (currentLine = 0; currentLine < args.size(); currentLine++) {
-            vector<string> words = interpreter->Lexer(currentLine);
+        while (interpreter->getCurrentLine() < args.size()) {
+            vector<string> words = interpreter->Lexer(interpreter->getCurrentLine());
             interpreter->Parser(words);
         }
     }

@@ -13,8 +13,10 @@ class Interpreter {
 
     public:
         Interpreter(vector<string> lines, map<string, double> &symbolTable, map<string, string> &pathTable);
-        vector<string> Lexer(int &currentLine);
+        vector<string> Lexer(int currentLine);
         void Parser(vector<string> words);
+        int getCurrentLine();
+        void setCurrentLine(int line);
 };
 
 #endif // INTERPRETER_H

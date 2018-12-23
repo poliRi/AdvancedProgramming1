@@ -11,12 +11,12 @@ void WhileCommand::setCondition(ConditionParser* condition) {
 
 void WhileCommand::doCommand(vector<string> args) {
     Interpreter* interpreter = new Interpreter(args, *symbolTable, *pathTable);
-    int currentLine;
     while (condition->isTrue()) {
-        for (currentLine = 0; currentLine < args.size(); currentLine++) {
-            vector<string> words = interpreter->Lexer(currentLine);
+        while (interpreter->getCurrentLine() < args.size()) {
+            vector<string> words = interpreter->Lexer(interpreter->getCurrentLine());
             interpreter->Parser(words);
         }
+        interpreter->setCurrentLine(0);
     }
 }
 

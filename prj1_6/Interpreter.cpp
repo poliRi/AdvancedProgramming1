@@ -18,6 +18,7 @@ Interpreter::Interpreter(vector<string> lines, map<string, double> &symbolTable,
     this->symbolTable = &symbolTable;
     this->pathTable = &pathTable;
     this->commands = {};
+    this->currentLine = 0;
     commands.insert(pair<string,Command*>("openDataServer",(new OpenServerCommand())));
     commands.insert(pair<string,Command*>("connect",(new ConnectCommand())));
     commands.insert(pair<string,Command*>("print",(new PrintCommand(symbolTable))));
@@ -30,9 +31,8 @@ Interpreter::Interpreter(vector<string> lines, map<string, double> &symbolTable,
     commands.insert(pair<string,Command*>("if",(new IfCommand(symbolTable, pathTable))));
 }
 
-vector<string> Interpreter::Lexer(int &currentLine) {
-    this->currentLine = currentLine;
-    vector<string> words = Utils::Split(lines[currentLine], " ");
+vector<string> Interpreter::Lexer(int line) {
+    vector<string> words = Utils::Split(lines[line], " ");
     /*//print vector
     for (const auto& res : words) {
            cout << res << endl;
@@ -119,8 +119,17 @@ void Interpreter::Parser(vector<string> words) {
                 params.push_back(evaluate->getResultStr());
                 ass->doCommand(params);
             }
-    } else if ((words[0].size() == 0)||(words[0] == "}")) {
+    } else if (words[0].size() == 0) {
     } else {
          throw logic_error("unrecognized operation");
     }
+    currentLine++;
+}
+
+int Interpreter::getCurrentLine() {
+    return this->currentLine;
+}
+
+void Interpreter::setCurrentLine(int line) {
+    this->currentLine = line;
 }

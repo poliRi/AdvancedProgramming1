@@ -14,9 +14,8 @@ int main(int argc, char *argv[]) {
             map<string, double> symbolTable = {};
             map<string, string> pathTable = {};
             Interpreter* interpreter = new Interpreter(lines, symbolTable, pathTable);
-            int currentLine;
-            for (currentLine = 0; currentLine < lines.size(); currentLine++) {
-                vector<string> words = interpreter->Lexer(currentLine);
+            while (interpreter->getCurrentLine() < lines.size()) {
+                vector<string> words = interpreter->Lexer(interpreter->getCurrentLine());
                 interpreter->Parser(words);
             }
             file.close();
