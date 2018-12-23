@@ -1,3 +1,5 @@
+#ifndef BINARYEXPRESSIONS_H
+#define BINARYEXPRESSIONS_H
 #include "interface.h"
 
 class Plus : public BinaryExpression {
@@ -34,3 +36,5 @@ class BoolenExpr : public BinaryExpression {
         BoolenExpr(Expression *left, Expression *right);
         double calculate();
 };
+
+#endif // BINARYEXPRESSIONS_H

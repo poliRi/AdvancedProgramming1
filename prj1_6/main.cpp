@@ -4,14 +4,16 @@
 #include "FormExpressionCommand.h"
 
 int main(int argc, char *argv[]) {
-    if (argc == 2) {
+    /*if (argc == 2) {
         string fileName = argv[1];
         vector<string> words;
         ifstream file;
         file.open(fileName);
         if (file.is_open()) {
             auto lines = Utils::Split(file, "\n");
-            Interpreter* interpreter = new Interpreter(lines);
+            map<string, double> symbolTable = {};
+            map<string, string> pathTable = {};
+            Interpreter* interpreter = new Interpreter(lines, symbolTable, pathTable);
             int currentLine;
             for (currentLine = 0; currentLine < lines.size() - 1; currentLine++) {
                 vector<string> words = interpreter->Lexer(currentLine);
@@ -22,21 +24,15 @@ int main(int argc, char *argv[]) {
             cerr << "error opening file" << endl;
         }
     } else if (argc == 1) {
-        /*string line;
+        string line;
         while (line != "") {
             getline (cin,line);
             vector<string> words = interpreter->Lexer(line);
             interpreter->Parser(words);
         }
-    }*/ else {
+    } else {
         cout << "invalid number of arguments" << endl;
-    }
-
-
-    /*Interpreter* interpreter = new Interpreter();
-    string fileName = "/Users/polinarabinovich/CLionProjects/project1/project1.txt";
-    vector<string> words = interpreter->Lexer(fileName);
-    interpreter->Parser(words);*/
+    }*/
 
     vector<string> v = {};
     map<string, double> m = {{"heading", 15} , {"throttle", 7.8}};

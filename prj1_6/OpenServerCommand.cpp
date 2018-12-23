@@ -12,19 +12,15 @@ void OpenServerCommand::doCommand(vector<string> args) {
         if ((port < 0) || (rate < 0)) {
             throw invalid_argument("invalid argument");
         }
-        //creating pthread
-        void *(*doServer)(void *);
-        MyParams *params = new MyParams();
-        params->port = port;
-        params->rate = rate;
-        pthread_t serv;
-        pthread_create(&serv, nullptr, doServer, &params);
+        void *(*doServer)(void*);
+
+//        pthread_create(&thread, nullptr, doServer, nullptr);
+        //send two parameters to Data Reader Server
+//        doServer(port, rate);
     }
 }
 
-void *OpenServerCommand::doServer(void *arg) {
-    //casting
-    MyParams *params = (MyParams *) arg;
+int OpenServerCommand::doServer(int port, int rate) {
     int sockfd, newsockfd, clilen;
     char buffer[256];
     struct sockaddr_in serv_addr, cli_addr;
@@ -44,7 +40,7 @@ void *OpenServerCommand::doServer(void *arg) {
 
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = INADDR_ANY;
-    serv_addr.sin_port = htons(params->port);
+    serv_addr.sin_port = htons(port);
 
     /* Now bind the host address using bind() call.*/
 //    if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) == -1) {
@@ -67,26 +63,22 @@ void *OpenServerCommand::doServer(void *arg) {
         exit(1);
     }
 
-    //when we see word "quit"
-    while (!strcmp(buffer,"quit")){
-        /* If connection is established then start communicating */
-        bzero(buffer, 256);
-        n = read(newsockfd, buffer, 255);
+    /* If connection is established then start communicating */
+    bzero(buffer, 256);
+    n = read(newsockfd, buffer, 255);
 
-        if (n < 0) {
-            perror("ERROR reading from socket");
-            exit(1);
-        }
+    if (n < 0) {
+        perror("ERROR reading from socket");
+        exit(1);
+    }
 
-        printf("Here is the message: %s\n", buffer);
+    printf("Here is the message: %s\n", buffer);
 
-        /* Write a response to the client */
-        n = write(newsockfd, "I got your message", 18);
+    /* Write a response to the client */
+    n = write(newsockfd, "I got your message", 18);
 
-        if (n < 0) {
-            perror("ERROR writing to socket");
-            exit(1);
-        }
-
+    if (n < 0) {
+        perror("ERROR writing to socket");
+        exit(1);
     }
 }

@@ -1,10 +1,8 @@
+#ifndef OPENSERVERCOMMAND_H
+#define OPENSERVERCOMMAND_H
 #include "interface.h"
 
 class OpenServerCommand : public Command {
-    typedef struct {
-        int port;
-        int rate;
-    } MyParams;
 
 private:
     pthread_t thread;
@@ -12,9 +10,9 @@ private:
 
 public:
     OpenServerCommand();
-
     void doCommand(vector<string> args);
-
-    static void *doServer(void *);
-
+    int doServer(int port, int rate);
+    int pthread_create(pthread_t *THREAD_ID, void *ATTR, void *(*THREAD_FUNC)(void *), void *ARG);
 };
+
+#endif // OPENSERVERCOMMAND_H

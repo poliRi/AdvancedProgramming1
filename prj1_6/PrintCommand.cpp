@@ -1,6 +1,6 @@
 #include "PrintCommand.h"
 
-PrintCommand::PrintCommand(map<string, double> symbolTable) {
+PrintCommand::PrintCommand(map<string, double> &symbolTable) {
     this->symbolTable = symbolTable;
 }
 

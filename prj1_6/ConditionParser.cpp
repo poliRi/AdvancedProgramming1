@@ -1,6 +1,6 @@
 #include "ConditionParser.h"
 
-ConditionParser::ConditionParser(vector<string> tokens, map<string, double> symbolTable) {
+ConditionParser::ConditionParser(vector<string> tokens, map<string, double> &symbolTable) {
     this->symbolTable = symbolTable;
     this->evaluate = new FormExpressionCommand(symbolTable);
     leftExp = "";

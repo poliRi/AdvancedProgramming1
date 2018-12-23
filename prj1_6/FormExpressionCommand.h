@@ -1,3 +1,5 @@
+#ifndef FORMEXPRESSIONCOMMAND_H
+#define FORMEXPRESSIONCOMMAND_H
 #include "interface.h"
 
 class FormExpressionCommand : public Command {
@@ -8,7 +10,7 @@ class FormExpressionCommand : public Command {
         Expression* e;
 
     public:
-        FormExpressionCommand(map<string, double> symbolTable);
+        FormExpressionCommand(map<string, double> &symbolTable);
         void doCommand(vector<string> args);
         void evaluateVars();
         bool isSignelNumber();
@@ -23,3 +25,6 @@ class FormExpressionCommand : public Command {
         Expression* fromPostfixToExpr(string postfix);
         string getResultStr();
 };
+
+#endif // FORMEXPRESSIONCOMMAND_H
+

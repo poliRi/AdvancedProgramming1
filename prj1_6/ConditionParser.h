@@ -1,3 +1,5 @@
+#ifndef CONDITIONPARSER_H
+#define CONDITIONPARSER_H
 #include "interface.h"
 #include "FormExpressionCommand.h"
 
@@ -11,6 +13,9 @@ class ConditionParser {
         FormExpressionCommand* evaluate;
 
     public:
-        ConditionParser(vector<string> tokens, map<string, double> symbolTable);
+        ConditionParser(vector<string> tokens, map<string, double> &symbolTable);
         bool isTrue();
 };
+
+#endif // CONDITIONPARSER_H
+

@@ -10,21 +10,24 @@
 #include "ConditionParser.h"
 #include "WhileCommand.h"
 #include "IfCommand.h"
+#include "BindCommand.h"
 
-Interpreter::Interpreter(vector<string> lines) {
+
+Interpreter::Interpreter(vector<string> lines, map<string, double> &symbolTable, map<string, string> &pathTable) {
     this->lines = lines;
-    this->symbolTable = {};
+    this->symbolTable = symbolTable;
+    this->pathTable = pathTable;
     this->commands = {};
     commands.insert(pair<string,Command*>("openDataServer",(new OpenServerCommand())));
     commands.insert(pair<string,Command*>("connect",(new ConnectCommand())));
     commands.insert(pair<string,Command*>("print",(new PrintCommand(symbolTable))));
-    commands.insert(pair<string,Command*>("var",(new DefineVarCommand(symbolTable))));
+    commands.insert(pair<string,Command*>("var",(new DefineVarCommand(symbolTable, pathTable))));
     commands.insert(pair<string,Command*>("sleep",(new SleepCommand())));
-    commands.insert(pair<string,Command*>("assignment",(new AssignmentCommand(symbolTable))));
-    //commands.insert(pair<string,Command*>("bind",(new BindCommand())));
+    commands.insert(pair<string,Command*>("assignment",(new AssignmentCommand(symbolTable, pathTable))));
+    commands.insert(pair<string,Command*>("bind",(new BindCommand(pathTable))));
     commands.insert(pair<string,Command*>("formExpression",(new FormExpressionCommand(symbolTable))));
-    commands.insert(pair<string,Command*>("while",(new WhileCommand(symbolTable))));
-    commands.insert(pair<string,Command*>("if",(new IfCommand(symbolTable))));
+    commands.insert(pair<string,Command*>("while",(new WhileCommand(symbolTable, pathTable))));
+    commands.insert(pair<string,Command*>("if",(new IfCommand(symbolTable, pathTable))));
 }
 
 vector<string> Interpreter::Lexer(int &currentLine) {
@@ -116,8 +119,4 @@ void Interpreter::Parser(vector<string> words) {
     } else {
         throw logic_error("unrecognized operation");
     }
-}
-
-map<string, double> Interpreter::setSymbolTable(map<string, double> symbolTable) {
-    this->symbolTable = symbolTable;
 }

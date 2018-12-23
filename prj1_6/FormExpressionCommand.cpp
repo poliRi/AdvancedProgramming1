@@ -3,7 +3,7 @@
 #include "Number.h"
 #include "BinaryExpressions.h"
 
-FormExpressionCommand::FormExpressionCommand(map<string, double> symbolTable) {
+FormExpressionCommand::FormExpressionCommand(map<string, double> &symbolTable) {
     this->symbolTable = symbolTable;
 }
 

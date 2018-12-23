@@ -1,3 +1,5 @@
+#ifndef SLEEPCOMMAND_H
+#define SLEEPCOMMAND_H
 #include "interface.h"
 
 class SleepCommand : public Command {
@@ -7,4 +9,6 @@ class SleepCommand : public Command {
         void doCommand(vector<string> args);
 
 };
+
+#endif // SLEEPCOMMAND_H
 
