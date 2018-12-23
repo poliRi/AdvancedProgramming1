@@ -70,9 +70,22 @@ CMakeFiles/project1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/polinarabinovich/CLionProjects/project1/main.cpp -o CMakeFiles/project1.dir/main.cpp.s
 
+CMakeFiles/project1.dir/BindCommand.cpp.o: CMakeFiles/project1.dir/flags.make
+CMakeFiles/project1.dir/BindCommand.cpp.o: ../BindCommand.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/project1.dir/BindCommand.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/BindCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/BindCommand.cpp
+
+CMakeFiles/project1.dir/BindCommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project1.dir/BindCommand.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/polinarabinovich/CLionProjects/project1/BindCommand.cpp > CMakeFiles/project1.dir/BindCommand.cpp.i
+
+CMakeFiles/project1.dir/BindCommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/BindCommand.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/polinarabinovich/CLionProjects/project1/BindCommand.cpp -o CMakeFiles/project1.dir/BindCommand.cpp.s
+
 CMakeFiles/project1.dir/OpenServerCommand.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/OpenServerCommand.cpp.o: ../OpenServerCommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/project1.dir/OpenServerCommand.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/project1.dir/OpenServerCommand.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/OpenServerCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/OpenServerCommand.cpp
 
 CMakeFiles/project1.dir/OpenServerCommand.cpp.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/project1.dir/OpenServerCommand.cpp.s: cmake_force
 
 CMakeFiles/project1.dir/Utils.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/Utils.cpp.o: ../Utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/project1.dir/Utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project1.dir/Utils.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/Utils.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/Utils.cpp
 
 CMakeFiles/project1.dir/Utils.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/project1.dir/Utils.cpp.s: cmake_force
 
 CMakeFiles/project1.dir/Interpreter.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/Interpreter.cpp.o: ../Interpreter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project1.dir/Interpreter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/project1.dir/Interpreter.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/Interpreter.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/Interpreter.cpp
 
 CMakeFiles/project1.dir/Interpreter.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/project1.dir/Interpreter.cpp.s: cmake_force
 
 CMakeFiles/project1.dir/ConnectCommand.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/ConnectCommand.cpp.o: ../ConnectCommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/project1.dir/ConnectCommand.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/project1.dir/ConnectCommand.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/ConnectCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/ConnectCommand.cpp
 
 CMakeFiles/project1.dir/ConnectCommand.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/project1.dir/ConnectCommand.cpp.s: cmake_force
 
 CMakeFiles/project1.dir/DefineVarCommand.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/DefineVarCommand.cpp.o: ../DefineVarCommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/project1.dir/DefineVarCommand.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/project1.dir/DefineVarCommand.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/DefineVarCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/DefineVarCommand.cpp
 
 CMakeFiles/project1.dir/DefineVarCommand.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/project1.dir/DefineVarCommand.cpp.s: cmake_force
 
 CMakeFiles/project1.dir/BinaryExpressions.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/BinaryExpressions.cpp.o: ../BinaryExpressions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/project1.dir/BinaryExpressions.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/project1.dir/BinaryExpressions.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/BinaryExpressions.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/BinaryExpressions.cpp
 
 CMakeFiles/project1.dir/BinaryExpressions.cpp.i: cmake_force
@@ -150,7 +163,7 @@ CMakeFiles/project1.dir/BinaryExpressions.cpp.s: cmake_force
 
 CMakeFiles/project1.dir/Number.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/Number.cpp.o: ../Number.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/project1.dir/Number.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/project1.dir/Number.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/Number.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/Number.cpp
 
 CMakeFiles/project1.dir/Number.cpp.i: cmake_force
@@ -163,7 +176,7 @@ CMakeFiles/project1.dir/Number.cpp.s: cmake_force
 
 CMakeFiles/project1.dir/PrintCommand.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/PrintCommand.cpp.o: ../PrintCommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/project1.dir/PrintCommand.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/project1.dir/PrintCommand.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/PrintCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/PrintCommand.cpp
 
 CMakeFiles/project1.dir/PrintCommand.cpp.i: cmake_force
@@ -174,22 +187,22 @@ CMakeFiles/project1.dir/PrintCommand.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/PrintCommand.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/polinarabinovich/CLionProjects/project1/PrintCommand.cpp -o CMakeFiles/project1.dir/PrintCommand.cpp.s
 
-CMakeFiles/project1.dir/LoopCommand.cpp.o: CMakeFiles/project1.dir/flags.make
-CMakeFiles/project1.dir/LoopCommand.cpp.o: ../LoopCommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/project1.dir/LoopCommand.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/LoopCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/LoopCommand.cpp
+CMakeFiles/project1.dir/WhileCommand.cpp.o: CMakeFiles/project1.dir/flags.make
+CMakeFiles/project1.dir/WhileCommand.cpp.o: ../WhileCommand.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/project1.dir/WhileCommand.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/WhileCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/WhileCommand.cpp
 
-CMakeFiles/project1.dir/LoopCommand.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project1.dir/LoopCommand.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/polinarabinovich/CLionProjects/project1/LoopCommand.cpp > CMakeFiles/project1.dir/LoopCommand.cpp.i
+CMakeFiles/project1.dir/WhileCommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project1.dir/WhileCommand.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/polinarabinovich/CLionProjects/project1/WhileCommand.cpp > CMakeFiles/project1.dir/WhileCommand.cpp.i
 
-CMakeFiles/project1.dir/LoopCommand.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/LoopCommand.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/polinarabinovich/CLionProjects/project1/LoopCommand.cpp -o CMakeFiles/project1.dir/LoopCommand.cpp.s
+CMakeFiles/project1.dir/WhileCommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/WhileCommand.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/polinarabinovich/CLionProjects/project1/WhileCommand.cpp -o CMakeFiles/project1.dir/WhileCommand.cpp.s
 
 CMakeFiles/project1.dir/ConditionParser.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/ConditionParser.cpp.o: ../ConditionParser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/project1.dir/ConditionParser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/project1.dir/ConditionParser.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/ConditionParser.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/ConditionParser.cpp
 
 CMakeFiles/project1.dir/ConditionParser.cpp.i: cmake_force
@@ -202,7 +215,7 @@ CMakeFiles/project1.dir/ConditionParser.cpp.s: cmake_force
 
 CMakeFiles/project1.dir/IfCommand.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/IfCommand.cpp.o: ../IfCommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/project1.dir/IfCommand.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/project1.dir/IfCommand.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/IfCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/IfCommand.cpp
 
 CMakeFiles/project1.dir/IfCommand.cpp.i: cmake_force
@@ -215,7 +228,7 @@ CMakeFiles/project1.dir/IfCommand.cpp.s: cmake_force
 
 CMakeFiles/project1.dir/Client.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/Client.cpp.o: ../Client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/project1.dir/Client.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/project1.dir/Client.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/Client.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/Client.cpp
 
 CMakeFiles/project1.dir/Client.cpp.i: cmake_force
@@ -226,22 +239,22 @@ CMakeFiles/project1.dir/Client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/Client.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/polinarabinovich/CLionProjects/project1/Client.cpp -o CMakeFiles/project1.dir/Client.cpp.s
 
-CMakeFiles/project1.dir/AssigmentCommand.cpp.o: CMakeFiles/project1.dir/flags.make
-CMakeFiles/project1.dir/AssigmentCommand.cpp.o: ../AssigmentCommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/project1.dir/AssigmentCommand.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/AssigmentCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/AssigmentCommand.cpp
+CMakeFiles/project1.dir/AssignmentCommand.cpp.o: CMakeFiles/project1.dir/flags.make
+CMakeFiles/project1.dir/AssignmentCommand.cpp.o: ../AssignmentCommand.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/project1.dir/AssignmentCommand.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/AssignmentCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/AssignmentCommand.cpp
 
-CMakeFiles/project1.dir/AssigmentCommand.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project1.dir/AssigmentCommand.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/polinarabinovich/CLionProjects/project1/AssigmentCommand.cpp > CMakeFiles/project1.dir/AssigmentCommand.cpp.i
+CMakeFiles/project1.dir/AssignmentCommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project1.dir/AssignmentCommand.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/polinarabinovich/CLionProjects/project1/AssignmentCommand.cpp > CMakeFiles/project1.dir/AssignmentCommand.cpp.i
 
-CMakeFiles/project1.dir/AssigmentCommand.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/AssigmentCommand.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/polinarabinovich/CLionProjects/project1/AssigmentCommand.cpp -o CMakeFiles/project1.dir/AssigmentCommand.cpp.s
+CMakeFiles/project1.dir/AssignmentCommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/AssignmentCommand.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/polinarabinovich/CLionProjects/project1/AssignmentCommand.cpp -o CMakeFiles/project1.dir/AssignmentCommand.cpp.s
 
 CMakeFiles/project1.dir/FormExpressionCommand.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/FormExpressionCommand.cpp.o: ../FormExpressionCommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/project1.dir/FormExpressionCommand.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/project1.dir/FormExpressionCommand.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/FormExpressionCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/FormExpressionCommand.cpp
 
 CMakeFiles/project1.dir/FormExpressionCommand.cpp.i: cmake_force
@@ -254,7 +267,7 @@ CMakeFiles/project1.dir/FormExpressionCommand.cpp.s: cmake_force
 
 CMakeFiles/project1.dir/SleepCommand.cpp.o: CMakeFiles/project1.dir/flags.make
 CMakeFiles/project1.dir/SleepCommand.cpp.o: ../SleepCommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/project1.dir/SleepCommand.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/project1.dir/SleepCommand.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/SleepCommand.cpp.o -c /Users/polinarabinovich/CLionProjects/project1/SleepCommand.cpp
 
 CMakeFiles/project1.dir/SleepCommand.cpp.i: cmake_force
@@ -268,6 +281,7 @@ CMakeFiles/project1.dir/SleepCommand.cpp.s: cmake_force
 # Object files for target project1
 project1_OBJECTS = \
 "CMakeFiles/project1.dir/main.cpp.o" \
+"CMakeFiles/project1.dir/BindCommand.cpp.o" \
 "CMakeFiles/project1.dir/OpenServerCommand.cpp.o" \
 "CMakeFiles/project1.dir/Utils.cpp.o" \
 "CMakeFiles/project1.dir/Interpreter.cpp.o" \
@@ -276,11 +290,11 @@ project1_OBJECTS = \
 "CMakeFiles/project1.dir/BinaryExpressions.cpp.o" \
 "CMakeFiles/project1.dir/Number.cpp.o" \
 "CMakeFiles/project1.dir/PrintCommand.cpp.o" \
-"CMakeFiles/project1.dir/LoopCommand.cpp.o" \
+"CMakeFiles/project1.dir/WhileCommand.cpp.o" \
 "CMakeFiles/project1.dir/ConditionParser.cpp.o" \
 "CMakeFiles/project1.dir/IfCommand.cpp.o" \
 "CMakeFiles/project1.dir/Client.cpp.o" \
-"CMakeFiles/project1.dir/AssigmentCommand.cpp.o" \
+"CMakeFiles/project1.dir/AssignmentCommand.cpp.o" \
 "CMakeFiles/project1.dir/FormExpressionCommand.cpp.o" \
 "CMakeFiles/project1.dir/SleepCommand.cpp.o"
 
@@ -288,6 +302,7 @@ project1_OBJECTS = \
 project1_EXTERNAL_OBJECTS =
 
 project1: CMakeFiles/project1.dir/main.cpp.o
+project1: CMakeFiles/project1.dir/BindCommand.cpp.o
 project1: CMakeFiles/project1.dir/OpenServerCommand.cpp.o
 project1: CMakeFiles/project1.dir/Utils.cpp.o
 project1: CMakeFiles/project1.dir/Interpreter.cpp.o
@@ -296,16 +311,16 @@ project1: CMakeFiles/project1.dir/DefineVarCommand.cpp.o
 project1: CMakeFiles/project1.dir/BinaryExpressions.cpp.o
 project1: CMakeFiles/project1.dir/Number.cpp.o
 project1: CMakeFiles/project1.dir/PrintCommand.cpp.o
-project1: CMakeFiles/project1.dir/LoopCommand.cpp.o
+project1: CMakeFiles/project1.dir/WhileCommand.cpp.o
 project1: CMakeFiles/project1.dir/ConditionParser.cpp.o
 project1: CMakeFiles/project1.dir/IfCommand.cpp.o
 project1: CMakeFiles/project1.dir/Client.cpp.o
-project1: CMakeFiles/project1.dir/AssigmentCommand.cpp.o
+project1: CMakeFiles/project1.dir/AssignmentCommand.cpp.o
 project1: CMakeFiles/project1.dir/FormExpressionCommand.cpp.o
 project1: CMakeFiles/project1.dir/SleepCommand.cpp.o
 project1: CMakeFiles/project1.dir/build.make
 project1: CMakeFiles/project1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable project1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable project1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/project1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

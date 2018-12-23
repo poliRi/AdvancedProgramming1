@@ -4,8 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/polinarabinovich/CLionProjects/project1/AssigmentCommand.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/AssigmentCommand.cpp.o"
+  "/Users/polinarabinovich/CLionProjects/project1/AssignmentCommand.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/AssignmentCommand.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/BinaryExpressions.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/BinaryExpressions.cpp.o"
+  "/Users/polinarabinovich/CLionProjects/project1/BindCommand.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/BindCommand.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/Client.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/Client.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/ConditionParser.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/ConditionParser.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/ConnectCommand.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/ConnectCommand.cpp.o"
@@ -13,12 +14,12 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/polinarabinovich/CLionProjects/project1/FormExpressionCommand.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/FormExpressionCommand.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/IfCommand.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/IfCommand.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/Interpreter.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/Interpreter.cpp.o"
-  "/Users/polinarabinovich/CLionProjects/project1/LoopCommand.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/LoopCommand.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/Number.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/Number.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/OpenServerCommand.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/OpenServerCommand.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/PrintCommand.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/PrintCommand.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/SleepCommand.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/SleepCommand.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/Utils.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/Utils.cpp.o"
+  "/Users/polinarabinovich/CLionProjects/project1/WhileCommand.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/WhileCommand.cpp.o"
   "/Users/polinarabinovich/CLionProjects/project1/main.cpp" "/Users/polinarabinovich/CLionProjects/project1/cmake-build-debug/CMakeFiles/project1.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

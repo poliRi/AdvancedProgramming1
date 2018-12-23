@@ -80,16 +80,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/AssigmentCommand.cpp">
+		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/AssignmentCommand.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/AssigmentCommand.h">
+		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/AssignmentCommand.h">
 			<Option target="project1"/>
 		</Unit>
 		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/BinaryExpressions.cpp">
 			<Option target="project1"/>
 		</Unit>
 		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/BinaryExpressions.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/BindCommand.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/BindCommand.h">
 			<Option target="project1"/>
 		</Unit>
 		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/Client.cpp">
@@ -134,12 +140,6 @@
 		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/Interpreter.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/LoopCommand.cpp">
-			<Option target="project1"/>
-		</Unit>
-		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/LoopCommand.h">
-			<Option target="project1"/>
-		</Unit>
 		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/Number.cpp">
 			<Option target="project1"/>
 		</Unit>
@@ -168,6 +168,12 @@
 			<Option target="project1"/>
 		</Unit>
 		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/Utils.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/WhileCommand.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/WhileCommand.h">
 			<Option target="project1"/>
 		</Unit>
 		<Unit filename="/Users/polinarabinovich/CLionProjects/project1/interface.h">

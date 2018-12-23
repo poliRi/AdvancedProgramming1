@@ -1,5 +1,7 @@
 #include "ConnectCommand.h"
 #include "Utils.h"
+#include "Client.h"
+
 
 ConnectCommand::ConnectCommand() {}
 
@@ -24,7 +26,7 @@ void ConnectCommand::doCommand(vector<string> args) {
         if (port<0) {
            throw invalid_argument("invalid port number");
         }
-        //Client client(ip, port);
-        //client.connectToServer();
+        Client client(ip, port);
+        client.connectToServer();
     }
 }

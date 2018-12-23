@@ -3,16 +3,20 @@
 #include "interface.h"
 
 class OpenServerCommand : public Command {
+typedef struct{
+    int port;
+    int rate;
+}MyParams;
 
 private:
-    pthread_t thread;
     int result;
+    map<string, double> *symbolTable;
+    map<string, string> *pathTable;
 
 public:
-    OpenServerCommand();
+    OpenServerCommand(map<string, double> &symbolTable, map<string, string> &pathTable);
     void doCommand(vector<string> args);
-    int doServer(int port, int rate);
-    int pthread_create(pthread_t *THREAD_ID, void *ATTR, void *(*THREAD_FUNC)(void *), void *ARG);
+    static void* doServer(void* arg);
 };
 
 #endif // OPENSERVERCOMMAND_H

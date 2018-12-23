@@ -123,32 +123,32 @@ project1/fast:
 	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/build
 .PHONY : project1/fast
 
-AssigmentCommand.o: AssigmentCommand.cpp.o
+AssignmentCommand.o: AssignmentCommand.cpp.o
 
-.PHONY : AssigmentCommand.o
+.PHONY : AssignmentCommand.o
 
 # target to build an object file
-AssigmentCommand.cpp.o:
-	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/AssigmentCommand.cpp.o
-.PHONY : AssigmentCommand.cpp.o
+AssignmentCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/AssignmentCommand.cpp.o
+.PHONY : AssignmentCommand.cpp.o
 
-AssigmentCommand.i: AssigmentCommand.cpp.i
+AssignmentCommand.i: AssignmentCommand.cpp.i
 
-.PHONY : AssigmentCommand.i
+.PHONY : AssignmentCommand.i
 
 # target to preprocess a source file
-AssigmentCommand.cpp.i:
-	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/AssigmentCommand.cpp.i
-.PHONY : AssigmentCommand.cpp.i
+AssignmentCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/AssignmentCommand.cpp.i
+.PHONY : AssignmentCommand.cpp.i
 
-AssigmentCommand.s: AssigmentCommand.cpp.s
+AssignmentCommand.s: AssignmentCommand.cpp.s
 
-.PHONY : AssigmentCommand.s
+.PHONY : AssignmentCommand.s
 
 # target to generate assembly for a file
-AssigmentCommand.cpp.s:
-	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/AssigmentCommand.cpp.s
-.PHONY : AssigmentCommand.cpp.s
+AssignmentCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/AssignmentCommand.cpp.s
+.PHONY : AssignmentCommand.cpp.s
 
 BinaryExpressions.o: BinaryExpressions.cpp.o
 
@@ -176,6 +176,33 @@ BinaryExpressions.s: BinaryExpressions.cpp.s
 BinaryExpressions.cpp.s:
 	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/BinaryExpressions.cpp.s
 .PHONY : BinaryExpressions.cpp.s
+
+BindCommand.o: BindCommand.cpp.o
+
+.PHONY : BindCommand.o
+
+# target to build an object file
+BindCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/BindCommand.cpp.o
+.PHONY : BindCommand.cpp.o
+
+BindCommand.i: BindCommand.cpp.i
+
+.PHONY : BindCommand.i
+
+# target to preprocess a source file
+BindCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/BindCommand.cpp.i
+.PHONY : BindCommand.cpp.i
+
+BindCommand.s: BindCommand.cpp.s
+
+.PHONY : BindCommand.s
+
+# target to generate assembly for a file
+BindCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/BindCommand.cpp.s
+.PHONY : BindCommand.cpp.s
 
 Client.o: Client.cpp.o
 
@@ -366,33 +393,6 @@ Interpreter.cpp.s:
 	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/Interpreter.cpp.s
 .PHONY : Interpreter.cpp.s
 
-LoopCommand.o: LoopCommand.cpp.o
-
-.PHONY : LoopCommand.o
-
-# target to build an object file
-LoopCommand.cpp.o:
-	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/LoopCommand.cpp.o
-.PHONY : LoopCommand.cpp.o
-
-LoopCommand.i: LoopCommand.cpp.i
-
-.PHONY : LoopCommand.i
-
-# target to preprocess a source file
-LoopCommand.cpp.i:
-	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/LoopCommand.cpp.i
-.PHONY : LoopCommand.cpp.i
-
-LoopCommand.s: LoopCommand.cpp.s
-
-.PHONY : LoopCommand.s
-
-# target to generate assembly for a file
-LoopCommand.cpp.s:
-	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/LoopCommand.cpp.s
-.PHONY : LoopCommand.cpp.s
-
 Number.o: Number.cpp.o
 
 .PHONY : Number.o
@@ -528,6 +528,33 @@ Utils.cpp.s:
 	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/Utils.cpp.s
 .PHONY : Utils.cpp.s
 
+WhileCommand.o: WhileCommand.cpp.o
+
+.PHONY : WhileCommand.o
+
+# target to build an object file
+WhileCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/WhileCommand.cpp.o
+.PHONY : WhileCommand.cpp.o
+
+WhileCommand.i: WhileCommand.cpp.i
+
+.PHONY : WhileCommand.i
+
+# target to preprocess a source file
+WhileCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/WhileCommand.cpp.i
+.PHONY : WhileCommand.cpp.i
+
+WhileCommand.s: WhileCommand.cpp.s
+
+.PHONY : WhileCommand.s
+
+# target to generate assembly for a file
+WhileCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/WhileCommand.cpp.s
+.PHONY : WhileCommand.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -564,12 +591,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... project1"
-	@echo "... AssigmentCommand.o"
-	@echo "... AssigmentCommand.i"
-	@echo "... AssigmentCommand.s"
+	@echo "... AssignmentCommand.o"
+	@echo "... AssignmentCommand.i"
+	@echo "... AssignmentCommand.s"
 	@echo "... BinaryExpressions.o"
 	@echo "... BinaryExpressions.i"
 	@echo "... BinaryExpressions.s"
+	@echo "... BindCommand.o"
+	@echo "... BindCommand.i"
+	@echo "... BindCommand.s"
 	@echo "... Client.o"
 	@echo "... Client.i"
 	@echo "... Client.s"
@@ -591,9 +621,6 @@ help:
 	@echo "... Interpreter.o"
 	@echo "... Interpreter.i"
 	@echo "... Interpreter.s"
-	@echo "... LoopCommand.o"
-	@echo "... LoopCommand.i"
-	@echo "... LoopCommand.s"
 	@echo "... Number.o"
 	@echo "... Number.i"
 	@echo "... Number.s"
@@ -609,6 +636,9 @@ help:
 	@echo "... Utils.o"
 	@echo "... Utils.i"
 	@echo "... Utils.s"
+	@echo "... WhileCommand.o"
+	@echo "... WhileCommand.i"
+	@echo "... WhileCommand.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
