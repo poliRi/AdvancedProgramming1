@@ -4,6 +4,9 @@
 #include "ConditionParser.h"
 #include "Interpreter.h"
 
+/*
+class WhileCommand represents a while condition
+*/
 class WhileCommand : public Command {
 
     private:

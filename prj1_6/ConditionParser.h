@@ -3,6 +3,10 @@
 #include "interface.h"
 #include "FormExpressionCommand.h"
 
+/*
+class ConditionParser is in charge of parsing and holding a boolean condition,
+and return whether is true or false
+*/
 class ConditionParser {
 
     private:

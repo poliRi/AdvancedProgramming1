@@ -2,6 +2,9 @@
 #define BINARYEXPRESSIONS_H
 #include "interface.h"
 
+/*
+plus binary expression
+*/
 class Plus : public BinaryExpression {
 
     public:
@@ -9,6 +12,9 @@ class Plus : public BinaryExpression {
         double calculate();
 };
 
+/*
+minus binary expression
+*/
 class Minus : public BinaryExpression {
 
     public:
@@ -16,6 +22,9 @@ class Minus : public BinaryExpression {
         double calculate();
 };
 
+/*
+multipication binary expression
+*/
 class Mult : public BinaryExpression {
 
     public:
@@ -23,17 +32,13 @@ class Mult : public BinaryExpression {
         double calculate();
 };
 
+/*
+division binary expression
+*/
 class Div : public BinaryExpression {
 
     public:
         Div(Expression *left, Expression *right);
-        double calculate();
-};
-
-class BoolenExpr : public BinaryExpression {
-
-    public:
-        BoolenExpr(Expression *left, Expression *right);
         double calculate();
 };
 

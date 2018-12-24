@@ -2,6 +2,9 @@
 #define NUMBER_H
 #include "interface.h"
 
+/*
+number exprssion
+*/
 class Number : public Expression {
 
     private:

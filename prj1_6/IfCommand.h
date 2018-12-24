@@ -4,6 +4,9 @@
 #include "ConditionParser.h"
 #include "Interpreter.h"
 
+/*
+class IfCommand represents an if condition
+*/
 class IfCommand : public Command {
 
     private:

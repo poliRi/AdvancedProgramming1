@@ -2,6 +2,9 @@
 #define PRINTCOMMAND_H
 #include "interface.h"
 
+/*
+class PrintCommand is in charge of printing a given content to the screen
+*/
 class PrintCommand : public Command {
 
     private:

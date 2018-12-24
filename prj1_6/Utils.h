@@ -2,6 +2,9 @@
 #define UTILS_H
 #include "interface.h"
 
+/*
+class Utils is used as an assistant for splitting words into vector of strings
+*/
 class Utils {
 
     public:

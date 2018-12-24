@@ -2,6 +2,9 @@
 #define SLEEPCOMMAND_H
 #include "interface.h"
 
+/*
+class SleepCommand is in charge of freezing the program
+*/
 class SleepCommand : public Command {
 
     public:

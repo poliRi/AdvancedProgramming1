@@ -1,7 +1,13 @@
 #include "Utils.h"
 
+/*
+Utils: constructor
+*/
 Utils::Utils() {}
-//split string by delimeter
+
+/*
+splits the words of a string by delimeter
+*/
 vector<string> Utils::Split(string str, string delimeter) {
     vector<string> tokens;
     size_t pos;
@@ -15,7 +21,10 @@ vector<string> Utils::Split(string str, string delimeter) {
     }
     return tokens;
 }
-//split file by delimeter
+
+/*
+splits the words of a file by delimeter
+*/
 vector<string> Utils::Split(ifstream  &file, string delimeter) {
     vector<string> tokens;
     string line;
