@@ -178,7 +178,7 @@ void FormExpressionCommand::toTokens() {
 }
 
 /*
-Is charge of rewriting negative numbers and order of precedence between expressions,
+In charge of rewriting negative numbers and order of precedence between expressions,
 so that the following functions can distinguish them and interpret the expression correctly
 */
 void FormExpressionCommand::rewriteNegativeExp() {
@@ -365,5 +365,12 @@ returns the result expression in a string
 */
 string FormExpressionCommand::getResultStr() {
     return result;
+}
+
+/*
+FormExpressionCommand: constructor
+*/
+FormExpressionCommand::~FormExpressionCommand() {
+    delete e;
 }
 

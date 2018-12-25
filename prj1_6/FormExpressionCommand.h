@@ -30,6 +30,7 @@ class FormExpressionCommand : public Command {
         string convertToPostfix();
         Expression* fromPostfixToExpr(string postfix);
         string getResultStr();
+        ~FormExpressionCommand();
 };
 
 #endif // FORMEXPRESSIONCOMMAND_H

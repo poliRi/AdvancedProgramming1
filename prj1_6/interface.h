@@ -18,18 +18,27 @@
 
 using namespace std;
 
+/*
+Command interface. has the doCommand method
+*/
 class Command {
 
 public:
     virtual void doCommand(vector<string> args) = 0;
 };
 
+/*
+Expression interface. has the calculate method
+*/
 class Expression {
 
 public:
     virtual double calculate() = 0;
 };
 
+/*
+BinaryExpression abstract class. holds 2 members of type expression: left operand and right operand
+*/
 class BinaryExpression : public Expression {
 protected:
     Expression *left;

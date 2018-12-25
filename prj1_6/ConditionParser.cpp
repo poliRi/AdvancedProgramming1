@@ -72,3 +72,10 @@ bool ConditionParser::isTrue() {
         return (leftOperand != rightOperand);
     }
 }
+
+/*
+ConditionParser: constructor
+*/
+ConditionParser::~ConditionParser() {
+    delete evaluate;
+}

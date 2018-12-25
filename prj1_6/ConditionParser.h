@@ -19,6 +19,7 @@ class ConditionParser {
     public:
         ConditionParser(vector<string> tokens, map<string, double> &symbolTable);
         bool isTrue();
+        ~ConditionParser();
 };
 
 #endif // CONDITIONPARSER_H

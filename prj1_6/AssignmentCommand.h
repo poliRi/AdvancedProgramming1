@@ -2,6 +2,9 @@
 #define ASSIGNMENTCOMMAND_H
 #include "interface.h"
 
+/*
+class AssignmentCommand is in charge of assigning a given value to a given variable
+*/
 class AssignmentCommand : public Command {
 
     private:

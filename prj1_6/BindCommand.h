@@ -2,6 +2,9 @@
 #define BINDCOMMAND_H
 #include "interface.h"
 
+/*
+class BindCommand is in charge of binding a given variable's value to a given path
+*/
 class BindCommand : public Command {
 
     private:

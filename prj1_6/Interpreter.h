@@ -21,6 +21,8 @@ class Interpreter {
         void Parser(vector<string> words);
         int getCurrentLine();
         void setCurrentLine(int line);
+        void setSingleLineToRead(string line);
+        ~Interpreter();
 };
 
 #endif // INTERPRETER_H
