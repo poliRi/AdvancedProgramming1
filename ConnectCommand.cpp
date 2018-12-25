@@ -10,8 +10,12 @@ ConnectCommand::ConnectCommand(map<string, double> &symbolTable, map<string, str
     this->pathTable = &pathTable;
 }
 
+/*
+receives ip address and destination port,
+then opens a thread with a client socket that communicates with the simulator
+*/
 void ConnectCommand::doCommand(vector<string> args) {
-    // if the number of arguments is invalid throw exeception
+    //if the number of arguments is invalid throw exeception
     if (args.size() != 2) {
         throw invalid_argument("invalid number of arguments");
     }
@@ -37,22 +41,22 @@ void ConnectCommand::doCommand(vector<string> args) {
        throw invalid_argument("invalid port number");
     }
     //create a struct in which the program transmits the ip, portno, and symbol tables to the thread it opens
-    struct socketParams* sp = new socketParams();
-    sp->ip = ip;
-    sp->port = port;
-    sp->symbolT = symbolTable;
-    sp->pathT = pathTable;
+    struct ClientParams* cp = new ClientParams();
+    cp->ip = ip;
+    cp->port = port;
+    cp->symbolT = symbolTable;
+    cp->pathT = pathTable;
     //open a thread with the createSocket function
     pthread_t sock;
-    pthread_create(&sock, nullptr, createSocket, (void *)sp);
+    pthread_create(&sock, nullptr, createSocket, (void *)cp);
 }
 
 /*
-creates a client socket whose function is to send commands to the simulator. holds reference to the symbol
-tables in order to get the variable values from there
+creates a client socket whose purpose is to send commands to the simulator. holds reference to the symbol
+tables in order to get the variable values in real time
 */
 void *ConnectCommand::createSocket(void *arg) {
-    struct socketParams* sp = (struct socketParams*) arg;
+    struct ClientParams* cp = (struct ClientParams*) arg;
     //socket details declaration
     int sockfd, portno, n;
     struct sockaddr_in serv_addr;
@@ -60,9 +64,9 @@ void *ConnectCommand::createSocket(void *arg) {
     //messages will be holded in the buffer
     char buffer[256];
     //get the symbol tables and destination port number
-    map<string, double> *symbolT = sp->symbolT;
-    map<string, string> *pathT = sp->pathT;
-    portno = sp->port;
+    map<string, double> *symbolT = cp->symbolT;
+    map<string, string> *pathT = cp->pathT;
+    portno = cp->port;
 
     //create a socket point
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -71,7 +75,7 @@ void *ConnectCommand::createSocket(void *arg) {
         exit(1);
     }
     //get the destination ip address
-    server = gethostbyname(sp->ip.c_str());
+    server = gethostbyname(cp->ip.c_str());
     if (server == NULL) {
         cout << "ERROR, no such host" << endl;
         exit(0);
@@ -123,6 +127,6 @@ void *ConnectCommand::createSocket(void *arg) {
 
     }
     //clear allocated memory and exit the thread
-    delete sp;
+    delete cp;
     pthread_exit(nullptr);
 }

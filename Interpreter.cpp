@@ -26,7 +26,7 @@ Interpreter::Interpreter(vector<string> lines, map<string, double> &symbolTable,
     this->currentLine = 0;
     this->commands = {};
     //initialize all commands
-    commands.insert(pair<string,Command*>("openDataServer",(new OpenServerCommand())));
+    commands.insert(pair<string,Command*>("openDataServer",(new OpenServerCommand(symbolTable,pathTable))));
     commands.insert(pair<string,Command*>("connect",(new ConnectCommand(symbolTable, pathTable))));
     commands.insert(pair<string,Command*>("print",(new PrintCommand(symbolTable))));
     commands.insert(pair<string,Command*>("var",(new DefineVarCommand(symbolTable, pathTable))));

@@ -21,7 +21,7 @@ class ConnectCommand : public Command {
 /*
 this is a struct in which the program transmits arguments to the thread it opens
 */
-struct socketParams {
+struct ClientParams {
     string ip;
     int port;
     map<string, double> *symbolT;
