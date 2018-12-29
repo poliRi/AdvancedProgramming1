@@ -13,7 +13,7 @@ void SleepCommand::doCommand(vector<string> args) {
     if (args.size() == 0) {
         throw logic_error("no argument to sleep command");
     }
-    int milliSeconds = stoi(args[0]);
+    int milliSeconds = stoi(args[0])*1000;
     usleep(milliSeconds);
 }
 

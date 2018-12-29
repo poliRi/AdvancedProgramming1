@@ -10,9 +10,11 @@ class AssignmentCommand : public Command {
     private:
         map<string, double> *symbolTable;
         map<string, string> *pathTable;
+        map<string, bool> *isAssigned;
 
     public:
-        AssignmentCommand(map<string, double> &symbolTable, map<string, string> &pathTable);
+        AssignmentCommand(map<string, double> &symbolTable, map<string, string> &pathTable,
+        map<string, bool> &isAssigned);
         bool isNumber(string s);
         void doCommand(vector<string> args);
 };

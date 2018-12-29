@@ -4,10 +4,12 @@
 /*
 ConnectCommand: constructor
 */
-ConnectCommand::ConnectCommand(map<string, double> &symbolTable, map<string, string> &pathTable) {
+ConnectCommand::ConnectCommand(map<string, double> &symbolTable, map<string, string> &pathTable,
+map<string, bool> &isAssigned) {
     //hold a reference to the main symbol tables of the program
     this->symbolTable = &symbolTable;
     this->pathTable = &pathTable;
+    this->isAssigned = &isAssigned;
 }
 
 /*
@@ -46,6 +48,7 @@ void ConnectCommand::doCommand(vector<string> args) {
     cp->port = port;
     cp->symbolT = symbolTable;
     cp->pathT = pathTable;
+    cp->assigned = isAssigned;
     //open a thread with the createSocket function
     pthread_t sock;
     pthread_create(&sock, nullptr, createSocket, (void *)cp);
@@ -66,6 +69,7 @@ void *ConnectCommand::createSocket(void *arg) {
     //get the symbol tables and destination port number
     map<string, double> *symbolT = cp->symbolT;
     map<string, string> *pathT = cp->pathT;
+    map<string, bool> *assigned = cp->assigned;
     portno = cp->port;
 
     //create a socket point
@@ -100,31 +104,33 @@ void *ConnectCommand::createSocket(void *arg) {
         for (iter = pathT->begin(); iter != pathT->end(); ++iter) {
             //clear buffer
             bzero(buffer,256);
-            //get the variable path and value from the symbol tables, then construct a message
+            //get the variable name
             varName = iter->first;
-            message = "set " + iter->second + " " + to_string(symbolT->find(varName)->second);
-            strcpy(buffer, message.c_str());
-            strcat(buffer, "\r\n");
+            //if the variable has been assigned to a new value, set it in the simulator
+            if (assigned->find(varName)->second == true) {
+                //get the variable path and value from the symbol tables, then construct a message
+                message = "set " + iter->second + " " + to_string(symbolT->find(varName)->second);
+                strcpy(buffer, message.c_str());
+                strcat(buffer, "\r\n");
 
-            //send message to the server
-            n = write(sockfd, buffer, strlen(buffer));
-            if (n < 0) {
-                cout << "ERROR writing to socket";
-                exit(1);
+                //send message to the server
+                n = write(sockfd, buffer, strlen(buffer));
+                if (n < 0) {
+                    cout << "ERROR writing to socket";
+                    exit(1);
+                }
+
+                //read server response
+                bzero(buffer,256);
+                n = read(sockfd, buffer, 255);
+                if (n < 0) {
+                    cout << "ERROR reading from socket";
+                    exit(1);
+                }
             }
-
-            //read server response
-            bzero(buffer,256);
-            n = read(sockfd, buffer, 255);
-            if (n < 0) {
-                cout << "ERROR reading from socket";
-                exit(1);
-            }
-
-            //print server response
-            //cout << buffer << endl;
+            //finish the assignment proccess by setting the assignment flag to false
+            assigned->find(varName)->second = false;
         }
-
     }
     //clear allocated memory and exit the thread
     delete cp;

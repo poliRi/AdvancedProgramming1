@@ -194,6 +194,10 @@ void FormExpressionCommand::rewriteNegativeExp() {
             tokens.insert(tokens.begin() + 2, ")");
             tokens.insert(tokens.begin(), "0");
             tokens.insert(tokens.begin(), "(");
+            //if is --x then rewrite it as x
+        } else if (tokens[1] == "-") {
+            tokens.erase(tokens.begin());
+            tokens.erase(tokens.begin());
         }
     }
     //do the same for the rest of the tokens
@@ -205,6 +209,9 @@ void FormExpressionCommand::rewriteNegativeExp() {
                 tokens.insert(tokens.begin() + i + 2, ")");
                 tokens.insert(tokens.begin() + i, "0");
                 tokens.insert(tokens.begin() + i, "(");
+            } else if (tokens[i + 1] == "-") {
+                tokens.erase(tokens.begin() + i);
+                tokens.erase(tokens.begin() + i);
             }
         }
     }
@@ -243,7 +250,7 @@ void FormExpressionCommand::rewriteNegativeExp() {
 
 /*
 in charge of converting the expression from infix form to postfix form,
-using Dijakstra Shunting-Yard algorithm
+using Dijkstra Shunting-Yard algorithm
 */
 string FormExpressionCommand::convertToPostfix() {
     list<string> queue = {};

@@ -14,9 +14,10 @@ class Interpreter {
         map<string, Command*> commands;
         map<string, double> *symbolTable;
         map<string, string> *pathTable;
+        map<string, bool> *isAssigned;
 
     public:
-        Interpreter(vector<string> lines, map<string, double> &symbolTable, map<string, string> &pathTable);
+        Interpreter(vector<string> lines, map<string, double> &symbolTable, map<string, string> &pathTable, map<string, bool> &isAssigned);
         vector<string> Lexer(int currentLine);
         void Parser(vector<string> words);
         int getCurrentLine();

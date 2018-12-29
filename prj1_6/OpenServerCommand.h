@@ -11,9 +11,11 @@ class OpenServerCommand : public Command {
     private:
         map<string, double> *symbolTable;
         map<string, string> *pathTable;
+        map<string, bool> *isAssigned;
 
     public:
-        OpenServerCommand(map<string, double> &symbolTable, map<string, string> &pathTable);
+        OpenServerCommand(map<string, double> &symbolTable, map<string, string> &pathTable,
+        map<string, bool> &isAssigned);
         void doCommand(vector<string> args);
         static void* createSocket(void *arg);
 };
@@ -26,6 +28,7 @@ struct serverParams {
     int rate;
     map<string, double> *symbolT;
     map<string, string> *pathT;
+    map<string, bool> *assigned;
 };
 
 #endif // OPENSERVERCOMMAND_H

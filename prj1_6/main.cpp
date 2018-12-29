@@ -3,7 +3,7 @@
 #include "Utils.h"
 
 /*
-the main function is in chrage of interpreting and executing a given content,
+the main function is in charge of interpreting and executing a given content,
 whether given by a single line input from the user, or by a file of code lines
 */
 int main(int argc, char *argv[]) {
@@ -11,8 +11,17 @@ int main(int argc, char *argv[]) {
     declare the main symbol tables of the program.
     they will be holded in various commands for various purposes during the program
     */
+    //maps the variable name to its value
     map<string, double> symbolTable = {};
+    //maps the variable name to its address in the simulator
     map<string, string> pathTable = {};
+    /*
+    maps the variable name to its availability for going through an assignment process at the current moment.
+    when being assigned to a new value, its value on the map will be true until the end of the assignment
+    process, in order to prevent certain processes in the background from interfering with the assignment
+    and changing its desired value
+    */
+    map<string, bool> isAssigned = {};
     //if a file of code lines was given by the command line
     if (argc == 2) {
         string fileName = argv[1];
@@ -23,7 +32,7 @@ int main(int argc, char *argv[]) {
             //split the lines in the file into vector of strings
             auto lines = Utils::Split(file, "\n");
             //interpreter declaration. hold the vector of lines it has to read, and the symbol tables
-            Interpreter* interpreter = new Interpreter(lines, symbolTable, pathTable);
+            Interpreter* interpreter = new Interpreter(lines, symbolTable, pathTable, isAssigned);
             //for each current line index given by the interpreter
             while (interpreter->getCurrentLine() < lines.size()) {
                 //breaks the line components into vector of tokens
@@ -40,7 +49,7 @@ int main(int argc, char *argv[]) {
     } else if (argc == 1) {
         //declare on interpreter with initialized empty vector of lines to read
         vector<string> lines = {};
-        Interpreter* interpreter = new Interpreter(lines, symbolTable, pathTable);
+        Interpreter* interpreter = new Interpreter(lines, symbolTable, pathTable, isAssigned);
         string line = "";
         //as long as no order has been given to leave the program
         while (true) {

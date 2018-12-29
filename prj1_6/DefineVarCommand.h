@@ -11,9 +11,11 @@ class DefineVarCommand : public Command {
     private:
         map<string, double> *symbolTable;
         map<string, string> *pathTable;
+        map<string, bool> *isAssigned;
 
     public:
-        DefineVarCommand(map<string, double> &symbolTable, map<string, string> &pathTable);
+        DefineVarCommand(map<string, double> &symbolTable, map<string, string> &pathTable,
+        map<string, bool> &isAssigned);
         void doCommand(vector<string> args);
         bool isDigit(char c);
         bool isLetter(char c);

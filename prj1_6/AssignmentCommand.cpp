@@ -3,10 +3,12 @@
 /*
 AssignmentCommand: constructor
 */
-AssignmentCommand::AssignmentCommand(map<string, double> &symbolTable, map<string, string> &pathTable) {
+AssignmentCommand::AssignmentCommand(map<string, double> &symbolTable, map<string, string> &pathTable,
+map<string, bool> &isAssigned) {
     //hold reference to the main symbol tables of the program
     this->symbolTable = &symbolTable;
     this->pathTable = &pathTable;
+    this->isAssigned = &isAssigned;
 }
 
 /*
@@ -29,6 +31,11 @@ receives destination var, source expression, and makes an assignment between the
 void AssignmentCommand::doCommand(vector<string> args) {
     string destination = args[0];
     string source = args[1];
+    /*
+    set the being assigned flag to true, in order to prevent some processes from
+    changing the value of the variable in the symbol table throughout the asignment process
+    */
+    (isAssigned->find(destination)->second) = true;
     //throw execption if the destination var does not exist
     if (symbolTable->count(destination) <= 0) {
         throw logic_error("assignment to unrecognized var");

@@ -3,10 +3,12 @@
 /*
 DefineVarCommand: constructor
 */
-DefineVarCommand::DefineVarCommand(map<string, double> &symbolTable, map<string, string> &pathTable) {
+DefineVarCommand::DefineVarCommand(map<string, double> &symbolTable, map<string, string> &pathTable,
+map<string, bool> &isAssigned) {
     //hold a reference to the main symbol tables of the program
     this->symbolTable = &symbolTable;
     this->pathTable = &pathTable;
+    this->isAssigned = &isAssigned;
 }
 
 /*
@@ -40,6 +42,7 @@ void DefineVarCommand::doCommand(vector<string> args) {
         //insert initialized values to the tables
         symbolTable->insert(pair<string,double>(args[0],0));
         pathTable->insert(pair<string,string>(args[0]," "));
+        isAssigned->insert(pair<string,bool>(args[0],false));
     }
 }
 

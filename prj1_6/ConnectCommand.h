@@ -11,9 +11,11 @@ class ConnectCommand : public Command {
     private:
         map<string, double> *symbolTable;
         map<string, string> *pathTable;
+        map<string, bool> *isAssigned;
 
     public:
-        ConnectCommand(map<string, double> &symbolTable, map<string, string> &pathTable);
+        ConnectCommand(map<string, double> &symbolTable, map<string, string> &pathTable,
+        map<string, bool> &isAssigned);
         void doCommand(vector<string> args);
         static void* createSocket(void *arg);
 };
@@ -26,6 +28,7 @@ struct ClientParams {
     int port;
     map<string, double> *symbolT;
     map<string, string> *pathT;
+    map<string, bool> *assigned;
 };
 
 #endif // CONNECTCOMMAND_H

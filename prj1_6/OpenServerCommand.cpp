@@ -4,10 +4,13 @@
 /*
 OpenServerCommand: constructor
 */
-OpenServerCommand::OpenServerCommand(map<string, double> &symbolTable,  map<string, string> &pathTable) {
+OpenServerCommand::OpenServerCommand(map<string, double> &symbolTable,  map<string, string> &pathTable,
+map<string, bool> &isAssigned) {
     //hold a reference to the main symbol tables of the program
     this->symbolTable = &symbolTable;
     this->pathTable = &pathTable;
+    this->isAssigned = &isAssigned;
+
 }
 
 /*
@@ -21,7 +24,7 @@ void OpenServerCommand::doCommand(vector<string> args) {
     }
     //get port and rate
     int port = stoi(args[0]);
-    int rate = (stoi(args[1]))*10;
+    int rate = (stoi(args[1]))*10000;
     //check for a valid range of the port
     if ((port < 2000)||(port > 65535)) {
        throw invalid_argument("invalid port number");
@@ -36,6 +39,7 @@ void OpenServerCommand::doCommand(vector<string> args) {
     sp->rate = rate;
     sp->symbolT = symbolTable;
     sp->pathT = pathTable;
+    sp->assigned = isAssigned;
     //open a thread with the createSocket function
     pthread_t sock;
     pthread_create(&sock, nullptr, createSocket, (void *)sp);
@@ -57,6 +61,7 @@ void *OpenServerCommand::createSocket(void *arg) {
     //get the symbol tables and rate
     map<string, double> *symbolT = sp->symbolT;
     map<string, string> *pathT = sp->pathT;
+    map<string, bool> *assigned = sp->assigned;
     rate = sp->rate;
 
     //first call to socket() function
@@ -95,12 +100,15 @@ void *OpenServerCommand::createSocket(void *arg) {
         //read the message
         bzero(buffer,1024);
         n = read(newsockfd,buffer,1023);
+
+        //if there is no message
         if (n < 0) {
-            cout << "ERROR reading from socket";
+            close(newsockfd);
+            close(sockfd);
+            cout << "socket closed";
             exit(1);
         }
 
-        cout << "Here is the message: " << buffer;
         //split the values in the message
         vector<string> v = Utils::Split(buffer, ",");
         //create a map between all the possible variables paths and their current values
@@ -138,10 +146,18 @@ void *OpenServerCommand::createSocket(void *arg) {
         for (iter = pathT->begin(); iter != pathT->end(); ++iter) {
             varName = iter->first;
             pathName = iter->second;
-            //get it's new value from the values map
-            value = values.find(pathName)->second;
-            //update it's value in the symbol table
-            (symbolT->find(varName)->second) = value;
+            /*
+            check whether the variable is available to be modified,
+            or is currently in process of being assigned to a new value
+            */
+            bool varIsAssigned = assigned->find(varName)->second;
+            //if it is available
+            if (varIsAssigned == false) {
+                //get it's new value from the values map
+                value = values.find(pathName)->second;
+                //update it's value in the symbol table
+                (symbolT->find(varName)->second) = value;
+            }
         }
 
         //write a response to the client

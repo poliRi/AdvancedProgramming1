@@ -13,9 +13,11 @@ class IfCommand : public Command {
         ConditionParser* condition;
         map<string, double> *symbolTable;
         map<string, string> *pathTable;
+        map<string, bool> *isAssigned;
 
     public:
-        IfCommand(map<string, double> &symbolTable, map<string, string> &pathTable);
+        IfCommand(map<string, double> &symbolTable, map<string, string> &pathTable,
+        map<string, bool> &isAssigned);
         void setCondition(ConditionParser* condition);
         void doCommand(vector<string> args);
 };

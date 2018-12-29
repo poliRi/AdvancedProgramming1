@@ -3,10 +3,12 @@
 /*
 IfCommand: constructor
 */
-IfCommand::IfCommand(map<string, double> &symbolTable, map<string, string> &pathTable) {
+IfCommand::IfCommand(map<string, double> &symbolTable, map<string, string> &pathTable,
+map<string, bool> &isAssigned) {
     //hold a reference to the main symbol tables of the program
     this->symbolTable = &symbolTable;
     this->pathTable = &pathTable;
+    this->isAssigned = &isAssigned;
 }
 
 /*
@@ -20,7 +22,7 @@ void IfCommand::setCondition(ConditionParser* condition) {
 executes the given lines if the given condition is true
 */
 void IfCommand::doCommand(vector<string> args) {
-    Interpreter* interpreter = new Interpreter(args, *symbolTable, *pathTable);
+    Interpreter* interpreter = new Interpreter(args, *symbolTable, *pathTable, *isAssigned);
     if (condition->isTrue()) {
         //for each line the interpreter is reading, lex and parse
         while (interpreter->getCurrentLine() < args.size()) {

@@ -16,26 +16,30 @@
 /*
 Interpreter: constructor. initializes the set of lines its has to read, and all types of commands
 */
-Interpreter::Interpreter(vector<string> lines, map<string, double> &symbolTable, map<string, string> &pathTable) {
+Interpreter::Interpreter(vector<string> lines, map<string, double> &symbolTable, map<string, string> &pathTable,
+map<string, bool> &isAssigned) {
     //hold reference to the lines of the current scope
     this->lines = lines;
     //hold reference to the main symbol tables of the program
     this->symbolTable = &symbolTable;
     this->pathTable = &pathTable;
+    this->isAssigned = &isAssigned;
     //initialize the index of the current line to be read
     this->currentLine = 0;
     this->commands = {};
     //initialize all commands
-    commands.insert(pair<string,Command*>("openDataServer",(new OpenServerCommand(symbolTable,pathTable))));
-    commands.insert(pair<string,Command*>("connect",(new ConnectCommand(symbolTable, pathTable))));
+    commands.insert(pair<string,Command*>("openDataServer",(new OpenServerCommand(symbolTable, pathTable,
+    isAssigned))));
+    commands.insert(pair<string,Command*>("connect",(new ConnectCommand(symbolTable, pathTable, isAssigned))));
     commands.insert(pair<string,Command*>("print",(new PrintCommand(symbolTable))));
-    commands.insert(pair<string,Command*>("var",(new DefineVarCommand(symbolTable, pathTable))));
+    commands.insert(pair<string,Command*>("var",(new DefineVarCommand(symbolTable, pathTable, isAssigned))));
     commands.insert(pair<string,Command*>("sleep",(new SleepCommand())));
-    commands.insert(pair<string,Command*>("assignment",(new AssignmentCommand(symbolTable, pathTable))));
+    commands.insert(pair<string,Command*>("assignment",(new AssignmentCommand(symbolTable, pathTable,
+    isAssigned))));
     commands.insert(pair<string,Command*>("bind",(new BindCommand(pathTable))));
     commands.insert(pair<string,Command*>("formExpression",(new FormExpressionCommand(symbolTable))));
-    commands.insert(pair<string,Command*>("while",(new WhileCommand(symbolTable, pathTable))));
-    commands.insert(pair<string,Command*>("if",(new IfCommand(symbolTable, pathTable))));
+    commands.insert(pair<string,Command*>("while",(new WhileCommand(symbolTable, pathTable, isAssigned))));
+    commands.insert(pair<string,Command*>("if",(new IfCommand(symbolTable, pathTable, isAssigned))));
     commands.insert(pair<string,Command*>("enterc",(new EnterCharacterCommand())));
 }
 
@@ -187,7 +191,7 @@ void Interpreter::Parser(vector<string> words) {
     } else if (words[0] == "exit") {
         exit(0);
       //throw exception in case of unrecognized operation
-    }else {
+    } else {
          throw logic_error("unrecognized operation");
     }
     //promote the index of the current line
