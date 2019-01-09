@@ -7,7 +7,6 @@ namespace server_side {
 
         public:
             virtual void open(int port, ClientHandler* clientHandler) = 0;
-            virtual void serv() = 0;
             virtual void stop() = 0;
     };
 
@@ -17,7 +16,8 @@ namespace boot {
     class Main {
 
         public:
-            int main(int argc, char *argv[]);
+            Main();
+            void main(int port);
     };
 }
 

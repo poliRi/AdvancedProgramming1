@@ -15,6 +15,9 @@
 #include <netdb.h>
 #include <pthread.h>
 #include<list>
+#include <queue>
+#include <climits>
+#include<bits/stdc++.h>
 
 using namespace std;
 

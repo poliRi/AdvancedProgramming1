@@ -8,7 +8,7 @@ FileCacheManager::FileCacheManager() {
     if (reader.is_open()) {
         string line;
         while (getline(reader,line)) {
-           v = Utils::Split(line, " ");
+           v = Utils::Split(line, "|");
            this->solutions.insert(pair<string,string>(v[0], v[1]));
         }
     }
@@ -27,7 +27,7 @@ void FileCacheManager::saveSolution(string problem, string solution) {
     solutions.insert(pair<string,string>(problem, solution));
     ofstream writer("solutions.txt", writer.app);
     if (writer.is_open()) {
-        writer << problem << " " << solution << endl;
+        writer << problem << "|" << solution << endl;
     } else {
         cerr << "error opening file" << endl;
     }

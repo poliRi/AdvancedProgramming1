@@ -9,10 +9,11 @@ MyTestClientHandler::MyTestClientHandler(Solver* solver, CacheManager* cacheMana
 void MyTestClientHandler::handleClient(int sock) {
     char buffer[1024];
     int n;
-    string problem;
-    string solution;
+    string problem = "";
+    string solution = "";
 
-    while (strcmp(buffer, "end") != 0) {
+    while (true) {
+        problem = "";
         bzero(buffer, 1024);
 
         n = read(sock, buffer, 1023);
@@ -21,7 +22,14 @@ void MyTestClientHandler::handleClient(int sock) {
             exit(1);
         }
 
-        problem = string(buffer);
+        for (int i = 0; buffer[i] != '\n'; i++) {
+            problem += buffer[i];
+        }
+
+        if (problem == "end") {
+            break;
+        }
+
         if (cm->contains(problem)) {
             solution = cm->getSolution(problem);
         } else {

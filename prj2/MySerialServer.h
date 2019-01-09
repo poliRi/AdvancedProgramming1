@@ -2,22 +2,28 @@
 #define _MYSERIALSERVER_H
 #include "interface.h"
 #include "ServerSide.h"
+#include "Timeout.h"
 
 using namespace server_side;
 
 class MySerialServer : public Server {
 
+    int sock;
+    int clientSock;
+
     public:
         MySerialServer();
         void open(int port, ClientHandler* clientHandler);
-        void serv();
         void stop();
         static void* createSocket(void *arg);
 };
 
 struct serverParams {
+    int sock;
+    int clientSock;
     int port;
     ClientHandler* handler;
+    Timeout* timeout;
 };
 
 #endif // _MYSERIALSERVER_H
