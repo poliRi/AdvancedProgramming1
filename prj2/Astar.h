@@ -1,6 +1,10 @@
 #ifndef _ASTAR_H
 #define _ASTAR_H
 #include "interface.h"
+#include <float.h>
+#include <cmath>
+#include <set>
+
 
 // a cell structure used in Astar
 struct cell {

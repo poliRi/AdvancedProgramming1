@@ -17,7 +17,7 @@
 #include<list>
 #include <queue>
 #include <climits>
-#include<bits/stdc++.h>
+#include <stack>
 
 using namespace std;
 

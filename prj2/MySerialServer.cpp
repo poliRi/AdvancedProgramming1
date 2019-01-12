@@ -46,7 +46,7 @@ void *MySerialServer::createSocket(void *arg) {
     serv_addr.sin_port = htons(portno);
 
     //now bind the host address using bind() call
-    if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
+    if (::bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
         cout << "ERROR on binding";
         exit(1);
     }
