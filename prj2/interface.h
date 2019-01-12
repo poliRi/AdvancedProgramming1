@@ -1,5 +1,5 @@
-#ifndef INTERFACE_H
-#define INTERFACE_H
+#ifndef _INTERFACE_H
+#define _INTERFACE_H
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -51,4 +51,36 @@ class CacheManager {
         virtual void saveSolution(string problem, string solution) = 0;
 };
 
-#endif
+class Searchable {
+
+    public:
+        virtual bool isValid(int row, int col) = 0;
+        virtual bool isUnBlocked(int row, int col) = 0;
+        virtual vector<vector<int>> getArea() = 0;
+        virtual pair<int, int> getSize() = 0;
+};
+
+/*
+Searcher interface. has the search method
+*/
+class Searcher {
+
+    public:
+        virtual int search(Searchable* area, pair<int, int> source, pair<int, int> destination) = 0;
+};
+
+/*
+node for current location and distance from source location
+*/
+struct Node {
+	int row;
+	int col;
+	int dist;
+};
+
+#define X -1
+
+#define ROW 10
+#define COL 10
+
+#endif // _INTERFACE_H

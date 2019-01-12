@@ -1,0 +1,409 @@
+commit 333a739e210eec32fa937a8b598ed68995cb0d6c
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Sat Dec 29 23:05:46 2018 +0200
+
+    Delete project1.txt
+
+commit 2d6116eb16a6b7c9ea68639c9ef508a9dfeb3057
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Sat Dec 29 23:05:37 2018 +0200
+
+    Delete script2.txt
+
+commit ea866c6d72a9539eee7dc9390db773bb11646718
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Sat Dec 29 23:05:29 2018 +0200
+
+    Delete script.txt
+
+commit 662240f70407a6e093b2664901de588bd88db521
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Sat Dec 29 23:05:20 2018 +0200
+
+    Delete log.txt
+
+commit 37e31443b5c3ac0e1eef598e246734e74dea9d4f
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Sat Dec 29 23:05:09 2018 +0200
+
+    Delete DataReaderServer.h
+
+commit a2642e4668ae2a17f637cb38efb1e9ef4394a6c9
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Sat Dec 29 23:05:00 2018 +0200
+
+    Delete DataReaderServer.cpp
+
+commit 02bf19164e0323b8d2dec4669665a8c5d0a6fd7b
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Sat Dec 29 23:04:46 2018 +0200
+
+    Delete Client.h
+
+commit 217254428c6c0f8fdc2ac0ad3966b3d0f89443dc
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Sat Dec 29 23:04:34 2018 +0200
+
+    Delete Client.cpp
+
+commit e36ca7bd6768a624e21bafa8ba2966afcc7abe49
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Sat Dec 29 22:57:53 2018 +0200
+
+    Add files via upload
+    
+    final
+
+commit 1783fed0b942e70a939fcb12635c9e3ffe1e2560
+Author: poliRi <polina.rabinovich12@gmail.com>
+Date:   Wed Dec 26 01:48:07 2018 +0200
+
+    proj with coding style
+
+commit b842348e828eb6f0cc4cb5eac1f2f298520b1f43
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Wed Dec 26 01:41:38 2018 +0200
+
+    Add files via upload
+    
+    updated OpenServerCommand
+
+commit 16b029943ba7c87b646b9b37e3502f44a369bb01
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Tue Dec 25 04:15:42 2018 +0200
+
+    Add files via upload
+    
+    updated server client and interpreter
+
+commit a4817dc5e6f4720ec7bc017b24cc35e66ee1b905
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Tue Dec 25 01:20:19 2018 +0200
+
+    Add files via upload
+
+commit 9858ed4996a3091747d4e129ae282ad89b0d5891
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Mon Dec 24 04:25:18 2018 +0200
+
+    Add files via upload
+    
+    updated coding style, except for assignment command, bind command and servers
+
+commit d305fa4396c1cf62614c75119e28bbabb33aa8bd
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Sun Dec 23 22:45:46 2018 +0200
+
+    Add files via upload
+    
+    updated interpreter, if command, while command
+
+commit 6b22795ac83c39be3a38220158c465fe6d9f6f59
+Author: poliRi <polina.rabinovich12@gmail.com>
+Date:   Sun Dec 23 20:19:48 2018 +0200
+
+    Changed OpenDataServer
+
+commit ffbd4a341aeecf1a28bb59295cdb2beadf7ad707
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Sun Dec 23 13:48:36 2018 +0200
+
+    map fix
+
+commit 253549f4b78b86a6a57b8bfccabbcffdda59ceb3
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Sun Dec 23 03:46:48 2018 +0200
+
+    Add files via upload
+
+commit a7beb50733214786f69b9b21f77b7e3ce2871608
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Sat Dec 22 20:20:23 2018 +0200
+
+    Add files via upload
+    
+    IfCommand, WhileCommand, Interpreter update
+
+commit f94e777d10313cc35ce0921be68b7c856672cccc
+Author: poliRi <polina.rabinovich12@gmail.com>
+Date:   Sat Dec 22 17:47:53 2018 +0200
+
+    changed OpenDataServer
+
+commit 1021b4e8a3e85db76f850d0255afdb58a483f486
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Sat Dec 22 17:07:13 2018 +0200
+
+    Delete AssigmentCommand.h
+
+commit 7b074afd01d86f63cd859228582d377b68bd9bb9
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Sat Dec 22 17:07:03 2018 +0200
+
+    Delete AssigmentCommand.cpp
+
+commit 9d87c50d9422e7553b0def21ff262d6eb2df9be6
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Fri Dec 21 16:05:28 2018 +0200
+
+    Add files via upload
+    
+    Interpreter update, AssignmentCommand
+
+commit ea59d525e71b3d63b310a5fc1a1413071ee2b422
+Author: poliRi <polina.rabinovich12@gmail.com>
+Date:   Fri Dec 21 13:35:05 2018 +0200
+
+    changed LoopCommand
+
+commit b3ec2ddee0d72463d280e175cb7ff197423baaf1
+Author: poliRi <polina.rabinovich12@gmail.com>
+Date:   Fri Dec 21 12:56:53 2018 +0200
+
+    added Client, thread, loopCommand
+
+commit 1af270faf8b1be9c95b18b76b6fbc8a3f16bccb5
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Fri Dec 21 11:47:18 2018 +0200
+
+    Add files via upload
+
+commit 69b5da979e49eb697be0b6d73a8af654f4ae8de7
+Author: poliRi <polina.rabinovich12@gmail.com>
+Date:   Fri Dec 21 11:19:06 2018 +0200
+
+    organize
+
+commit cfe5f5a0cd5883414947e721551e4d762afba554
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Fri Dec 21 02:49:52 2018 +0200
+
+    Add files via upload
+
+commit a49b43b75f8455b0cf8f9e8f9978de8edbcae233
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Wed Dec 19 20:09:14 2018 +0200
+
+    Update Readme.md
+
+commit 449b923a97acea9e77b6abd2019dd7ea285ff3c8
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Wed Dec 19 20:08:43 2018 +0200
+
+    Add files via upload
+
+commit d0b85a1fb509ffb10801a989959c0afce8a111e2
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Wed Dec 19 20:05:27 2018 +0200
+
+    Add files via upload
+
+commit b5cd5af4a8b9f872bfba34f0c33973be843c4ffe
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Wed Dec 19 14:01:02 2018 +0200
+
+    Add files via upload
+
+commit 4f5c00dafe88bb4b57efea7a5ec36bc352e1b4ad
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 23:24:19 2018 +0200
+
+    Add files via upload
+
+commit df84ca1313b5c9cb45d165f74ab39e2a57864bcc
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Tue Dec 18 16:17:09 2018 +0200
+
+    Add files via upload
+
+commit d267a08e47df2869d7aa000e6e0f97834873e2be
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:46:12 2018 +0200
+
+    Delete project1
+
+commit 004e0028df43e7c2598d1f377771f0a228133948
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:46:05 2018 +0200
+
+    Delete project1.cbp
+
+commit 1b9d24e27063e23db5fede8d4514f4595e5473a4
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:45:57 2018 +0200
+
+    Delete CMakeLists.txt
+
+commit a08a958a6ae52dda5fe8fd7d71ce0dbf06b9ea9a
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:45:49 2018 +0200
+
+    Delete Utils.h
+
+commit 05c08b7fa8473ab4226bbad45d8f208d373bc5ca
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:45:37 2018 +0200
+
+    Delete DataReaderServer.cpp
+
+commit 4e412635d8e79cde43e123376594f52c082db033
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:45:31 2018 +0200
+
+    Delete DataReaderServer.h
+
+commit 6c2e67922e263607d4526234dbe9f66d8e162972
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:45:25 2018 +0200
+
+    Delete ConnectCommand.cpp
+
+commit e9864144999881a74ed261a5559b004ac598d428
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:45:18 2018 +0200
+
+    Delete CommandManager.h
+
+commit f12bea9eb1b19d279aa2d027c03d5e9f14c648ad
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:45:12 2018 +0200
+
+    Delete CommandManager.cpp
+
+commit bc6cb54b0e705370c5de5b100797ddf76508c680
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:45:06 2018 +0200
+
+    Delete ConnectCommand.h
+
+commit 59d50b93bc92b2819ae9c1d232f9fb5ca2fa4af5
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:44:55 2018 +0200
+
+    Delete CMakeLists.txt
+
+commit 335cda576c4eaf4d5e8eb03d08867ec687f12e34
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:44:48 2018 +0200
+
+    Delete DefineVarCommand.cpp
+
+commit c239264993879fdb5b3d9a4e85f7dcb1ed89655e
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:44:40 2018 +0200
+
+    Delete Utils.cpp
+
+commit e418446a958ed78c586989f80f622905591b8915
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:44:34 2018 +0200
+
+    Delete Utils.h
+
+commit 5e88193baf16254bc8416e6bf0618e9c01c67cfb
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:44:22 2018 +0200
+
+    Delete main.cpp
+
+commit b6d27a60a044e7e613834c1192e99cdc252bdbb8
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:44:15 2018 +0200
+
+    Delete OpenServerCommand.h
+
+commit 041f3f21a438f48538bc34fb933fcbeea2255ce1
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:44:09 2018 +0200
+
+    Delete OpenServerCommand.cpp
+
+commit c8b8a50bd331379072ac9ddbc92514648179c78a
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:44:00 2018 +0200
+
+    Delete Interpreter.h
+
+commit 896174e2f5e40cbe77c1953fa71c2c8ccbffe7e3
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:43:53 2018 +0200
+
+    Delete Interpreter.cpp
+
+commit a7ac069cab87324534ce873c3bcf6d475ad92d03
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:43:47 2018 +0200
+
+    Delete IParser.h
+
+commit db4ee670e278f87af6557137e45c62554e2af3c8
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:43:41 2018 +0200
+
+    Delete DefineVarCommand.h
+
+commit 57310c130081c76fd2c7291dc4017d6c593becc2
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:43:35 2018 +0200
+
+    Delete IParser.cpp
+
+commit a0e168893b470c60ecc436c61e65d3e291824b9e
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:43:28 2018 +0200
+
+    Delete project1.txt
+
+commit edb372564376d3bfe20eb100bd5e8e2281246e58
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Tue Dec 18 15:43:15 2018 +0200
+
+    Delete Command.h
+
+commit 72c18f1b4111e333cc5fdf8afc03f789d8902296
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Tue Dec 18 03:52:34 2018 +0200
+
+    Add files via upload
+
+commit 473f240989e13e24adfe33dfe3bfa67541a60ede
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Tue Dec 18 00:30:39 2018 +0200
+
+    Add files via upload
+
+commit 815896f34a73201702625aa14ee807bec22545e2
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Tue Dec 18 00:28:54 2018 +0200
+
+    Delete project1_2.zip
+
+commit 9e74d7a5ec577b2a12cdea2dfeee70ad5664a571
+Author: oritzadok <45933272+oritzadok@users.noreply.github.com>
+Date:   Tue Dec 18 00:27:55 2018 +0200
+
+    Add files via upload
+
+commit 4d1200dbaa4a7d8dbb96157fa9f73e0447711e21
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Mon Dec 17 20:02:40 2018 +0200
+
+    Add files via upload
+
+commit 70479cbcdbafaac3b339f56b54540b5d6e18c1bb
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Mon Dec 17 19:32:26 2018 +0200
+
+    Delete main.cpp
+
+commit 004c7170b36728f52a145afa20d1f3b89230e5b3
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Mon Dec 17 19:32:18 2018 +0200
+
+    Delete project1.txt
+
+commit 394b85564c3c9b1dc9b38265b07875b11c5378f4
+Author: poliRi <45924829+poliRi@users.noreply.github.com>
+Date:   Mon Dec 17 00:47:29 2018 +0200
+
+    Add files via upload

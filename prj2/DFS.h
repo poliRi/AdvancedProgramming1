@@ -1,12 +1,13 @@
-#ifndef _BFS_H
-#define _BFS_H
+#ifndef _DFS_H
+#define _DFS_H
 #include "interface.h"
 
-class BFS : public Searcher {
+class DFS : public Searcher {
 
     public:
-        BFS();
+        DFS();
         int search(Searchable* area, pair<int, int> source, pair<int, int> destination);
 };
 
-#endif // _BFS_H
+#endif // _DFS_H
+
