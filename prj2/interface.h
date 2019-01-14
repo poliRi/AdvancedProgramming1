@@ -36,7 +36,7 @@ Solver interface. has the solve method
 class Solver {
 
     public:
-        virtual string solve(string problem) = 0;
+        virtual string solve(vector<string> problem) = 0;
 };
 
 /*
@@ -64,7 +64,7 @@ class Searchable {
 Searcher interface. has the search method
 */
 class Searcher {
-
+    //area - matrix
     public:
         virtual int search(Searchable* area, pair<int, int> source, pair<int, int> destination) = 0;
 };
