@@ -2,7 +2,6 @@
 #define _MYSERIALSERVER_H
 #include "interface.h"
 #include "ServerSide.h"
-#include "Timeout.h"
 
 using namespace server_side;
 
@@ -23,7 +22,6 @@ struct serverParams {
     int clientSock;
     int port;
     ClientHandler* handler;
-    Timeout* timeout;
 };
 
 #endif // _MYSERIALSERVER_H

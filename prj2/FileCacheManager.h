@@ -5,9 +5,10 @@
 class FileCacheManager : public CacheManager {
 
     map<string, string> solutions;
+    string fileName;
 
     public:
-        FileCacheManager();
+        FileCacheManager(string problemType);
         bool contains(string problem);
         string getSolution(string problem);
         void saveSolution(string problem, string solution);

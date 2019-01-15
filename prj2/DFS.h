@@ -6,7 +6,8 @@ class DFS : public Searcher {
 
     public:
         DFS();
-        int search(Searchable* area, pair<int, int> source, pair<int, int> destination);
+        string tracePath(vector<vector<pair<int, int>>> parentIndex, pair<int, int> dest);
+        string search(Searchable* area, pair<int, int> source, pair<int, int> destination);
 };
 
 #endif // _DFS_H

@@ -17,7 +17,8 @@
 #include<list>
 #include <queue>
 #include <climits>
-#include <stack>
+#include<bits/stdc++.h>
+#include <errno.h>
 
 using namespace std;
 
@@ -64,13 +65,13 @@ class Searchable {
 Searcher interface. has the search method
 */
 class Searcher {
-    //area - matrix
+
     public:
-        virtual int search(Searchable* area, pair<int, int> source, pair<int, int> destination) = 0;
+        virtual string search(Searchable* area, pair<int, int> source, pair<int, int> destination) = 0;
 };
 
 /*
-node for current location and distance from source location
+a node for current location and distance from source location
 */
 struct Node {
 	int row;
@@ -78,7 +79,20 @@ struct Node {
 	int dist;
 };
 
-#define X -1
+// a node structure used in Astar
+struct ANode {
+	// f = g + h
+	double f;
+	int g;
+	double h;
+	int dist;
+	// Row and Column index of its parent
+	// Note that 0 <= i <= ROW-1 & 0 <= j <= COL-1
+	int parent_i;
+	int parent_j;
+};
+
+#define X 1
 
 #define ROW 10
 #define COL 10

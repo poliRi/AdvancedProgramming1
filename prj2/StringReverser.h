@@ -6,7 +6,7 @@ class StringReverser : public Solver {
 
     public:
         StringReverser();
-        string solve(string problem);
+        string solve(vector<string> problem);
 };
 
 #endif // _STRINGREVERSER_H

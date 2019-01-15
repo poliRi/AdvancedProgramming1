@@ -1,5 +1,4 @@
 #include "MySerialServer.h"
-#include "Timeout.h"
 
 MySerialServer::MySerialServer() {}
 
@@ -9,7 +8,6 @@ void MySerialServer::open(int port, ClientHandler* clientHandler) {
     sp->clientSock = clientSock;
     sp->port = port;
     sp->handler = clientHandler;
-    sp->timeout = new Timeout(this);
     pthread_t sock;
     pthread_create(&sock, nullptr, createSocket, (void *)sp);
     pthread_join(sock, nullptr);
@@ -23,12 +21,11 @@ void MySerialServer::stop() {
 void *MySerialServer::createSocket(void *arg) {
     struct serverParams* sp = (struct serverParams*) arg;
     //socket details declaration
-    int sockfd = sp->sock, newsockfd = sp->clientSock, portno, clilen;
+    int sockfd = sp->sock, newsockfd = sp->clientSock, portno;
     //messages will be holded in the buffer
     struct sockaddr_in serv_addr, cli_addr;
 
     ClientHandler* handler = sp->handler;
-    Timeout* timeout = sp->timeout;
 
     //first call to socket() function
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -46,26 +43,33 @@ void *MySerialServer::createSocket(void *arg) {
     serv_addr.sin_port = htons(portno);
 
     //now bind the host address using bind() call
-    if (::bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
+    if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
         cout << "ERROR on binding";
         exit(1);
     }
 
     //start listening for clients
     while (true) {
-        //bool isConnected = false;
-        //timeout->wait(isConnected);
         listen(sockfd,5);
-        clilen = sizeof(cli_addr);
+        socklen_t clilen = sizeof(cli_addr);
+
+        timeval timeout;
+        timeout.tv_sec = 20;
+        timeout.tv_usec = 0;
+
+        setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeout, sizeof(timeout));
+
         //accept actual connection from the client
-        newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, (socklen_t*)&clilen);
+        newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen);
         if (newsockfd < 0) {
-            cout << "ERROR on accept";
-            exit(1);
+            if (errno == EWOULDBLOCK) {
+                cout << "timeout" << endl;
+                exit(2);
+            } else {
+                perror("ERROR on accept");
+                exit(3);
+            }
         }
-
-        //isConnected = true;
-
         cout << "connection occured" << endl;
         handler->handleClient(newsockfd);
     }

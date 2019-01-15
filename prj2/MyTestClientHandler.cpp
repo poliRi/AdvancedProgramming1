@@ -18,7 +18,7 @@ void MyTestClientHandler::handleClient(int sock) {
 
         n = read(sock, buffer, 1023);
         if (n < 0) {
-            cout << "ERROR reading from socket";
+            cout << "timeout";
             exit(1);
         }
 
@@ -33,7 +33,7 @@ void MyTestClientHandler::handleClient(int sock) {
         if (cm->contains(problem)) {
             solution = cm->getSolution(problem);
         } else {
-            solution = solver->solve(problem);
+            solution = solver->solve({problem});
             cm->saveSolution(problem, solution);
         }
         strcpy(buffer, solution.c_str());

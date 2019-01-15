@@ -1,10 +1,11 @@
 #include "FileCacheManager.h"
 #include "Utils.h"
 
-FileCacheManager::FileCacheManager() {
+FileCacheManager::FileCacheManager(string problemType) {
+    this->fileName = problemType + "_solutions.txt";
     this->solutions = {};
     vector<string> v = {};
-    ifstream reader("solutions.txt");
+    ifstream reader(fileName);
     if (reader.is_open()) {
         string line;
         while (getline(reader,line)) {
@@ -25,7 +26,7 @@ string FileCacheManager::getSolution(string problem) {
 
 void FileCacheManager::saveSolution(string problem, string solution) {
     solutions.insert(pair<string,string>(problem, solution));
-    ofstream writer("solutions.txt", writer.app);
+    ofstream writer(fileName, writer.app);
     if (writer.is_open()) {
         writer << problem << "|" << solution << endl;
     } else {
