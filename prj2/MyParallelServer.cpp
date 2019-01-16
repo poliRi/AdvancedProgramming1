@@ -2,6 +2,7 @@
 
 MyParallelServer::MyParallelServer() {}
 
+//opens the server
 void MyParallelServer::open(int port, ClientHandler* clientHandler) {
     struct parallelServerParams* sp = new parallelServerParams();
     sp->sock = sock;
@@ -16,6 +17,7 @@ void MyParallelServer::stop() {
     close(sock);
 }
 
+//opens the socket in a different thread
 void *MyParallelServer::createSocket(void *arg) {
     struct parallelServerParams* sp = (struct parallelServerParams*) arg;
     //socket details declaration
@@ -41,7 +43,7 @@ void *MyParallelServer::createSocket(void *arg) {
     serv_addr.sin_port = htons(portno);
 
     //now bind the host address using bind() call
-    if (::bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
+    if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
         cout << "ERROR on binding";
         exit(1);
     }
@@ -78,6 +80,7 @@ void *MyParallelServer::createSocket(void *arg) {
 
         cout << "connection occured" << endl;
 
+        // handle client
         struct conversationParams* cp = new conversationParams();
         cp->clientSock = newsockfd;
         cp->handler = handler->clone();
@@ -90,6 +93,7 @@ void *MyParallelServer::createSocket(void *arg) {
     pthread_exit(nullptr);
 }
 
+//handle client in a seperated thread
 void *MyParallelServer::servClient(void *arg) {
     struct conversationParams* cp = (struct conversationParams*) arg;
     cp->handler->handleClient(cp->clientSock);

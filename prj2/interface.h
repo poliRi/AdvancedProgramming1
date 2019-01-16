@@ -17,6 +17,7 @@
 #include<list>
 #include <queue>
 #include <climits>
+#include<bits/stdc++.h>
 #include <errno.h>
 
 using namespace std;

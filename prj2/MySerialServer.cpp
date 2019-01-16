@@ -2,6 +2,7 @@
 
 MySerialServer::MySerialServer() {}
 
+//opens the server
 void MySerialServer::open(int port, ClientHandler* clientHandler) {
     struct serialServerParams* sp = new serialServerParams();
     sp->sock = sock;
@@ -18,6 +19,7 @@ void MySerialServer::stop() {
     close(sock);
 }
 
+//creates the server socket in a seperated thread
 void *MySerialServer::createSocket(void *arg) {
     struct serialServerParams* sp = (struct serialServerParams*) arg;
     //socket details declaration
@@ -43,7 +45,7 @@ void *MySerialServer::createSocket(void *arg) {
     serv_addr.sin_port = htons(portno);
 
     //now bind the host address using bind() call
-    if (::bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
+    if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
         cout << "ERROR on binding";
         exit(1);
     }

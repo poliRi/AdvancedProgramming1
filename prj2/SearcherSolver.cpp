@@ -6,6 +6,7 @@ SearcherSolver::SearcherSolver(Searcher* searcher) {
     this->searcher = searcher;
 }
 
+//calls the search method of the class member searcher and returns answer
 string SearcherSolver::solve(vector<string> problem) {
     vector<vector<int>> matrix = {};
     for (int i = 0; i < problem.size() - 2; i++) {

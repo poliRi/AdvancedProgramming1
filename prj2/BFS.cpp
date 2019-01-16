@@ -2,6 +2,7 @@
 
 BFS::BFS() {}
 
+// A Utility Function to trace the path from the source to destination
 string BFS::tracePath(vector<vector<pair<int, int>>> parentIndex, pair<int, int> dest) {
 	int row = dest.first;
 	int col = dest.second;
@@ -38,6 +39,9 @@ string BFS::tracePath(vector<vector<pair<int, int>>> parentIndex, pair<int, int>
     return path;
 }
 
+// A Function to find the shortest path between
+// a given source cell to a destination cell according
+// to BFS Algorithm
 string BFS::search(Searchable* area, pair<int, int> source, pair<int, int> destination) {
     vector<vector<int>> matrix = area->getArea();
     // To keep track of visited QItems. Marking

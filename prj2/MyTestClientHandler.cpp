@@ -6,6 +6,7 @@ MyTestClientHandler::MyTestClientHandler(Solver* solver, CacheManager* cacheMana
     this->cm = cacheManager;
 }
 
+//handles string reverse clients
 void MyTestClientHandler::handleClient(int sock) {
     char buffer[1024];
     int n;
@@ -24,11 +25,11 @@ void MyTestClientHandler::handleClient(int sock) {
         for (int i = 0; buffer[i] != '\n'; i++) {
             row += buffer[i];
         }
-
+        //stop when getting "end"
         if (row == "end") {
             break;
         }
-
+        //send solution
         problem.push_back(row);
         if (cm->contains(problem)) {
             solution = cm->getSolution(problem);
@@ -46,6 +47,7 @@ void MyTestClientHandler::handleClient(int sock) {
     }
 }
 
+//makes copy of current handler
 ClientHandler* MyTestClientHandler::clone() {
     ClientHandler* handler = new MyTestClientHandler(this->solver, this->cm);
     return handler;

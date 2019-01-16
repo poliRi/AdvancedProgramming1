@@ -2,6 +2,7 @@
 #define _SERVERSIDE_H
 #include "interface.h"
 
+//server side namespace. includes server interface
 namespace server_side {
     class Server {
 

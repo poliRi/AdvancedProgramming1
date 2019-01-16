@@ -1,18 +1,14 @@
 #include "Astar.h"
-#include <stack>
-
-
 
 Astar::Astar() {}
 
 // A Utility Function to calculate the 'h' heuristics.
 double Astar::calculateHValue(int row, int col, pair<int, int> dest) {
 	// Return using the distance formula
-	return ((double)sqrt ((row-dest.first) * (row-dest.first) + (col-dest.second) * (col-dest.second)));
+	return ((double)sqrt((row-dest.first) * (row-dest.first) + (col-dest.second) * (col-dest.second)));
 }
 
-// A Utility Function to trace the path from the source
-// to destination
+// A Utility Function to trace the path from the source to destination
 string Astar::tracePath(vector<vector<ANode>> nodeDetails, pair<int, int> dest) {
 	int row = dest.first;
 	int col = dest.second;

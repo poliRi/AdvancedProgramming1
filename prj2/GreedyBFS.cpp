@@ -2,6 +2,7 @@
 
 GreedyBFS::GreedyBFS() {}
 
+// A Utility Function to trace the path from the source to destination
 string GreedyBFS::tracePath(vector<vector<pair<int, int>>> parentIndex, pair<int, int> dest) {
 	int row = dest.first;
 	int col = dest.second;
@@ -65,6 +66,9 @@ void GreedyBFS::sortQueue(vector<vector<int>> matrix, list<Node> &pQueue) {
     }
 }
 
+// A Function to find the shortest path between
+// a given source cell to a destination cell according
+// to Greedy BFS Algorithm
 string GreedyBFS::search(Searchable* area, pair<int, int> source, pair<int, int> destination) {
     vector<vector<int>> matrix = area->getArea();
     // To keep track of visited QItems. Marking

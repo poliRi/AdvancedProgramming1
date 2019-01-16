@@ -1,10 +1,6 @@
 #ifndef _ASTAR_H
 #define _ASTAR_H
 #include "interface.h"
-#include <cmath>
-#include <float.h>
-#include <set>
-
 
 class Astar : public Searcher {
 

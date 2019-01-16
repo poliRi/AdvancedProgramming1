@@ -1,6 +1,7 @@
 #include "FileCacheManager.h"
 #include "Utils.h"
 
+//loads data from file
 FileCacheManager::FileCacheManager(string problemType) {
     this->fileName = problemType + "_solutions.txt";
     this->solutions = {};
@@ -22,14 +23,17 @@ FileCacheManager::FileCacheManager(string problemType) {
     reader.close();
 }
 
+//checks if contains the solution
 bool FileCacheManager::contains(vector<string> problem) {
     return solutions.find(problem) != solutions.end();
 }
 
+//returns solution
 string FileCacheManager::getSolution(vector<string> problem) {
     return solutions.find(problem)->second;
 }
 
+//saves solution to file
 void FileCacheManager::saveSolution(vector<string> problem, string solution) {
     solutions.insert(pair<vector<string>,string>(problem, solution));
     ofstream writer(fileName, writer.app);

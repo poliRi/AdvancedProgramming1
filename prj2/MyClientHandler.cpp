@@ -6,11 +6,13 @@ MyClientHandler::MyClientHandler(Solver* solver, CacheManager* cacheManager) {
     this->cm = cacheManager;
 }
 
+//handles the current client
 void MyClientHandler::handleClient(int sock) {
     char buffer[1024];
     int n;
     vector<string> problem = {};
     string solution = "";
+    //sned and receive loop
     while (true) {
         string row = "";
 
@@ -25,7 +27,7 @@ void MyClientHandler::handleClient(int sock) {
         for (int i = 0; buffer[i] != '\n'; i++) {
             row += buffer[i];
         }
-
+        //when getting "end", check for solution and send
         if (row == "end") {
             if (cm->contains(problem)) {
                 solution = cm->getSolution(problem);
@@ -46,6 +48,7 @@ void MyClientHandler::handleClient(int sock) {
     }
 }
 
+//make a copy of the client handler
 ClientHandler* MyClientHandler::clone() {
     ClientHandler* handler = new MyClientHandler(this->solver, this->cm);
     return handler;
