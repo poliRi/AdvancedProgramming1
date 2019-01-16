@@ -17,7 +17,7 @@
 #include<list>
 #include <queue>
 #include <climits>
-#include <stack>
+#include <errno.h>
 
 using namespace std;
 
@@ -28,6 +28,7 @@ class ClientHandler {
 
     public:
         virtual void handleClient(int sock) = 0;
+        virtual ClientHandler* clone() = 0;
 };
 
 /*
@@ -46,9 +47,9 @@ or loading solutions for problems that are already exist
 class CacheManager {
 
     public:
-        virtual bool contains(string problem) = 0;
-        virtual string getSolution(string problem) = 0;
-        virtual void saveSolution(string problem, string solution) = 0;
+        virtual bool contains(vector<string> problem) = 0;
+        virtual string getSolution(vector<string> problem) = 0;
+        virtual void saveSolution(vector<string> problem, string solution) = 0;
 };
 
 class Searchable {
@@ -64,13 +65,13 @@ class Searchable {
 Searcher interface. has the search method
 */
 class Searcher {
-    //area - matrix
+
     public:
-        virtual int search(Searchable* area, pair<int, int> source, pair<int, int> destination) = 0;
+        virtual string search(Searchable* area, pair<int, int> source, pair<int, int> destination) = 0;
 };
 
 /*
-node for current location and distance from source location
+a node for current location and distance from source location
 */
 struct Node {
 	int row;
@@ -78,9 +79,17 @@ struct Node {
 	int dist;
 };
 
-#define X -1
-
-#define ROW 10
-#define COL 10
+// a node structure used in Astar
+struct ANode {
+	// f = g + h
+	double f;
+	int g;
+	double h;
+	int dist;
+	// Row and Column index of its parent
+	// Note that 0 <= i <= ROW-1 & 0 <= j <= COL-1
+	int parent_i;
+	int parent_j;
+};
 
 #endif // _INTERFACE_H

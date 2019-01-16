@@ -9,27 +9,27 @@ MyTestClientHandler::MyTestClientHandler(Solver* solver, CacheManager* cacheMana
 void MyTestClientHandler::handleClient(int sock) {
     char buffer[1024];
     int n;
-    string problem = "";
-    string solution = "";
-
     while (true) {
-        problem = "";
+        vector<string> problem = {};
+        string row = "";
+        string solution = "";
         bzero(buffer, 1024);
 
         n = read(sock, buffer, 1023);
         if (n < 0) {
-            cout << "ERROR reading from socket";
+            cout << "timeout";
             exit(1);
         }
 
         for (int i = 0; buffer[i] != '\n'; i++) {
-            problem += buffer[i];
+            row += buffer[i];
         }
 
-        if (problem == "end") {
+        if (row == "end") {
             break;
         }
 
+        problem.push_back(row);
         if (cm->contains(problem)) {
             solution = cm->getSolution(problem);
         } else {
@@ -44,4 +44,9 @@ void MyTestClientHandler::handleClient(int sock) {
             exit(1);
         }
     }
+}
+
+ClientHandler* MyTestClientHandler::clone() {
+    ClientHandler* handler = new MyTestClientHandler(this->solver, this->cm);
+    return handler;
 }

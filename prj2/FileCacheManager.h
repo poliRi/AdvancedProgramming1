@@ -4,13 +4,14 @@
 
 class FileCacheManager : public CacheManager {
 
-    map<string, string> solutions;
+    map<vector<string>, string> solutions;
+    string fileName;
 
     public:
-        FileCacheManager();
-        bool contains(string problem);
-        string getSolution(string problem);
-        void saveSolution(string problem, string solution);
+        FileCacheManager(string problemType);
+        bool contains(vector<string> problem);
+        string getSolution(vector<string> problem);
+        void saveSolution(vector<string> problem, string solution);
 };
 
 #endif // _FILECACHEMANAGER_H

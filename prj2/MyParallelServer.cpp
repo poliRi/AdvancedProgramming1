@@ -1,11 +1,10 @@
-#include "MySerialServer.h"
+#include "MyParallelServer.h"
 
-MySerialServer::MySerialServer() {}
+MyParallelServer::MyParallelServer() {}
 
-void MySerialServer::open(int port, ClientHandler* clientHandler) {
-    struct serialServerParams* sp = new serialServerParams();
+void MyParallelServer::open(int port, ClientHandler* clientHandler) {
+    struct parallelServerParams* sp = new parallelServerParams();
     sp->sock = sock;
-    sp->clientSock = clientSock;
     sp->port = port;
     sp->handler = clientHandler;
     pthread_t sock;
@@ -13,15 +12,14 @@ void MySerialServer::open(int port, ClientHandler* clientHandler) {
     pthread_join(sock, nullptr);
 }
 
-void MySerialServer::stop() {
-    close(clientSock);
+void MyParallelServer::stop() {
     close(sock);
 }
 
-void *MySerialServer::createSocket(void *arg) {
-    struct serialServerParams* sp = (struct serialServerParams*) arg;
+void *MyParallelServer::createSocket(void *arg) {
+    struct parallelServerParams* sp = (struct parallelServerParams*) arg;
     //socket details declaration
-    int sockfd = sp->sock, newsockfd = sp->clientSock, portno;
+    int sockfd = sp->sock, portno;
     //messages will be holded in the buffer
     struct sockaddr_in serv_addr, cli_addr;
 
@@ -48,22 +46,22 @@ void *MySerialServer::createSocket(void *arg) {
         exit(1);
     }
 
+    struct ClientCounter* clientCounter = new ClientCounter();
+    clientCounter->counter = 0;
     bool isFirstClient = true;
     //start listening for clients
     while (true) {
         listen(sockfd,5);
         socklen_t clilen = sizeof(cli_addr);
-
-        if (!isFirstClient) {
+        if (!isFirstClient && clientCounter->counter == 0) {
             timeval timeout;
-            timeout.tv_sec = 10;
+            timeout.tv_sec = 20;
             timeout.tv_usec = 0;
 
             setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeout, sizeof(timeout));
         }
-
         //accept actual connection from the client
-        newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen);
+        int newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen);
         if (newsockfd < 0) {
             if (errno == EWOULDBLOCK) {
                 cout << "timeout" << endl;
@@ -72,11 +70,30 @@ void *MySerialServer::createSocket(void *arg) {
                 perror("ERROR on accept");
                 exit(3);
             }
+            perror("ERROR on accept");
+            exit(3);
         }
+
+        clientCounter->counter++;
+
         cout << "connection occured" << endl;
-        handler->handleClient(newsockfd);
+
+        struct conversationParams* cp = new conversationParams();
+        cp->clientSock = newsockfd;
+        cp->handler = handler->clone();
+        cp->clientCounter = clientCounter;
+        pthread_t serv;
+        pthread_create(&serv, nullptr, &MyParallelServer::servClient, (void *)cp);
         isFirstClient = false;
     }
     delete sp;
+    pthread_exit(nullptr);
+}
+
+void *MyParallelServer::servClient(void *arg) {
+    struct conversationParams* cp = (struct conversationParams*) arg;
+    cp->handler->handleClient(cp->clientSock);
+    cp->clientCounter->counter--;
+    delete cp;
     pthread_exit(nullptr);
 }

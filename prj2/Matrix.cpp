@@ -11,7 +11,7 @@ bool Matrix::isValid(int row, int col) {
 }
 
 bool Matrix::isUnBlocked(int row, int col) {
-    return (matrix[row][col] != X);
+    return (matrix[row][col] != -1);
 }
 
 vector<vector<int>> Matrix::getArea() {

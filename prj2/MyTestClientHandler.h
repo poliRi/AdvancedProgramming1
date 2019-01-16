@@ -10,6 +10,7 @@ class MyTestClientHandler : public ClientHandler {
     public:
         MyTestClientHandler(Solver* solver, CacheManager* cacheManager);
         void handleClient(int sock);
+        ClientHandler* clone();
 };
 
 #endif // _MYTESTCLIENTHANDLER_H

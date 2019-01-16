@@ -6,8 +6,9 @@ class GreedyBFS : public Searcher {
 
     public:
         GreedyBFS();
+        string tracePath(vector<vector<pair<int, int>>> parentIndex, pair<int, int> dest);
         void sortQueue(vector<vector<int>> matrix, list<Node> &pQueue);
-        int search(Searchable* area, pair<int, int> source, pair<int, int> destination);
+        string search(Searchable* area, pair<int, int> source, pair<int, int> destination);
 };
 
 #endif // _GREEDYBFS_H

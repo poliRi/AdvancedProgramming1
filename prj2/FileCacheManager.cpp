@@ -1,33 +1,43 @@
 #include "FileCacheManager.h"
 #include "Utils.h"
 
-FileCacheManager::FileCacheManager() {
+FileCacheManager::FileCacheManager(string problemType) {
+    this->fileName = problemType + "_solutions.txt";
     this->solutions = {};
-    vector<string> v = {};
-    ifstream reader("solutions.txt");
+    vector<string> problem = {};
+    ifstream reader(fileName);
     if (reader.is_open()) {
         string line;
         while (getline(reader,line)) {
-           v = Utils::Split(line, "|");
-           this->solutions.insert(pair<string,string>(v[0], v[1]));
+            if (line == "|") {
+                getline(reader,line);
+                this->solutions.insert(pair<vector<string>,string>(problem, line));
+                problem.clear();
+                getline(reader,line);
+                getline(reader,line);
+            }
+            problem.push_back(line);
         }
     }
     reader.close();
 }
 
-bool FileCacheManager::contains(string problem) {
+bool FileCacheManager::contains(vector<string> problem) {
     return solutions.find(problem) != solutions.end();
 }
 
-string FileCacheManager::getSolution(string problem) {
+string FileCacheManager::getSolution(vector<string> problem) {
     return solutions.find(problem)->second;
 }
 
-void FileCacheManager::saveSolution(string problem, string solution) {
-    solutions.insert(pair<string,string>(problem, solution));
-    ofstream writer("solutions.txt", writer.app);
+void FileCacheManager::saveSolution(vector<string> problem, string solution) {
+    solutions.insert(pair<vector<string>,string>(problem, solution));
+    ofstream writer(fileName, writer.app);
     if (writer.is_open()) {
-        writer << problem << "|" << solution << endl;
+        for (auto& line : problem) {
+            writer << line << endl;
+        }
+        writer << "|" << endl << solution << endl << endl;
     } else {
         cerr << "error opening file" << endl;
     }
